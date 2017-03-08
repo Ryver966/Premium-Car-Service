@@ -2,34 +2,55 @@
   text-align: center;
 }
 .App-header {
-  background: linear-gradient(-270deg, #515151, #bdbdbd);
+  background-color: #515151;
   height: 120px;
   padding: 0;
   color: white;
+  border-bottom: 2px solid #ffdc0c;
 }
 .header-logo{
   float: left;
   height: 150px;
   width: 150px;
 }
-.navi-btn-container{
-  list-style: none;
-}
 .btn-list{
+  position: relative;
   list-style: none;
   float: right;
-  margin-top: -70px;
+  margin-top: -92px;
   width: calc(100% - 152px);
 }
 .btn-list li{
   float: left;
-  height: 40px;
-  width: 24.8%;
+  height: 31px;
+  width: 19.85%;
+  border-top: 1px solid #ffdc0c;
   border-left: 2px solid #ffdc0c;
   cursor: pointer;
+  padding-top: 30px;
 }
 .btn-list li:hover{
-  background-color: #ffdc0c;
+  opacity: 0.6;
+  background-color: #313131;
+}
+.first-li-btn{
+  border-left: 0px solid #fff;
+}
+.sign-in-btn{
+  float: right;
+  margin-right: 30px;
+  margin-top: 12.5px;
+  height: 30px;
+  width: 120px;
+  background-color: #717171;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.sign-in-btn:hover{
+  opacity: 0.6;
+  background-color: #313131;
+  transform: scale(1.05);
 }
 .App-intro {
   font-size: large;
