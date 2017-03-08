@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+.App-header {
+  background: linear-gradient(-270deg, #515151, #bdbdbd);
+  height: 120px;
+  padding: 0;
+  color: white;
+}
+.header-logo{
+  float: left;
+  height: 150px;
+  width: 150px;
+}
+.navi-btn-container{
+  list-style: none;
+}
+.btn-list{
+  list-style: none;
+  float: right;
+  margin-top: -70px;
+  width: calc(100% - 152px);
+}
+.btn-list li{
+  float: left;
+  height: 40px;
+  width: 24.8%;
+  border-left: 2px solid #ffdc0c;
+  cursor: pointer;
+}
+.btn-list li:hover{
+  background-color: #ffdc0c;
+}
+.App-intro {
+  font-size: large;
+}
+
