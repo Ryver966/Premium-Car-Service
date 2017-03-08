@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/CSS/App.css';
+import '../../styles/CSS/AppHeader.css';
 
 export default class AppHeader extends Component {
   render() {

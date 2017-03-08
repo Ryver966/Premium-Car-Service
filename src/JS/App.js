@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import '../styles/CSS/App.css';
 
-import AppHeader from'./AppHeader';
+import AppHeader from'./AppHeader/AppHeader';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={ require('../styles/img/Premium-Cars-Logo.png') } className='header-logo' alt='Logo' />
-          <AppHeader />
-        </div>
+        <AppHeader />
         <p className="App-intro">
         </p>
       </div>
