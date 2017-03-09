@@ -71,6 +71,8 @@ export default class AppHeader extends Component {
           isSelectedNewPasswordForm={ this.state.isSelectedNewPasswordForm }
           openJoinForm ={ this.openJoinForm }
           openNewPassForm={ this.openNewPassForm }
+          signUp={ this.props.signUp }
+          signIn={ this.props.signIn }
         />
       </div>
     )
