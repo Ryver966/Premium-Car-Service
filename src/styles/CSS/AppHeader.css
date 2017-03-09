@@ -79,7 +79,7 @@
   position: relative;
   display: none;
 }
-.show{
+.show-popup{
   animation: show 0.45s;
   display: block;
 }
@@ -88,7 +88,7 @@
   height: 410px;
   border-left: 1px solid #ffdc0c;
   float: right;
-  padding-top: 40px;
+  padding-top: 10px;
 }
 .left-popup-container{
   float: left;
@@ -110,12 +110,25 @@
 .sign-in-form{
   margin-top: 20px;
 }
-.sign-in-form input{
+.sign-in-popup input{
   width: 70%;
   height: 30px;
 }
-.sign-in-btn-in-form{
-  margin-top: 50px;
+.sign-in-popup-btn{
+  margin-top: 20px;
   border: none;
   background-color: #ffdc0c;
+  cursor: pointer;
+}
+.sign-in-popup-btn:hover{
+  opacity: 0.6;
+}
+.sign-in-popup h2{
+  color: #ffdc0c;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
 }
