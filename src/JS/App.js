@@ -4,7 +4,7 @@ import '../styles/CSS/App.css';
 
 import AppHeader from'./AppHeader/AppHeader';
 
-  var config = {
+  const config = {
     apiKey: "AIzaSyAuadIPLnAcxuzC0C_qMskmht3-PE7sEGA",
     authDomain: "premium-car-service.firebaseapp.com",
     databaseURL: "https://premium-car-service.firebaseio.com",
@@ -18,7 +18,20 @@ export default class App extends Component {
     super(props);
     this.signUp = this.signUp.bind(this),
     this.signIn = this.signIn.bind(this),
-    this.resetPass = this.resetPass.bind(this)
+    this.resetPass = this.resetPass.bind(this),
+    this.openPopup = this.openPopup.bind(this)
+
+    this.state = {
+      isUserLogged: false,
+      isOpenedSignInPopup: false
+    }
+  };
+
+  openPopup() {
+    this.setState({
+      isOpenedSignInPopup: !this.state.isOpenedSignInPopup
+    });
+    console.log(this.state.isOpenedSignInPopup)
   };
 
   signIn() {
@@ -27,11 +40,11 @@ export default class App extends Component {
 
     firebase.auth().signInWithEmailAndPassword(email.value, pass.value)
       .then((success) => {
-        firebase.auth().onAuthStateChanged((user) => {
-          if(user.length !== 0) {
-            console.log(user)
-          }
-        })
+            this.setState({
+              isUserLogged: true,
+              isOpenedSignInPopup: false
+            })
+        console.log(this.state.isOpenedSignInPopup)
         email.value = '';
         pass.value = '';
       })
@@ -92,6 +105,9 @@ export default class App extends Component {
           signUp={ this.signUp }
           signIn={ this.signIn }
           resetPass={ this.resetPass }
+          isUserLogged={ this.state.isUserLogged }
+          isOpenedSignInPopup={ this.state.isOpenedSignInPopup }
+          openPopup={ this.openPopup }
         />
         <p className="App-intro">
         </p>
