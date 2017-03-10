@@ -17,7 +17,8 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.signUp = this.signUp.bind(this),
-    this.signIn = this.signIn.bind(this)
+    this.signIn = this.signIn.bind(this),
+    this.resetPass = this.resetPass.bind(this)
   };
 
   signIn() {
@@ -26,7 +27,11 @@ export default class App extends Component {
 
     firebase.auth().signInWithEmailAndPassword(email.value, pass.value)
       .then((success) => {
-        console.log('logged in');
+        firebase.auth().onAuthStateChanged((user) => {
+          if(user.length !== 0) {
+            console.log(user)
+          }
+        })
         email.value = '';
         pass.value = '';
       })
@@ -64,13 +69,29 @@ export default class App extends Component {
       };
     };
   };
-  
+
+  resetPass() {
+    const email = document.getElementById('forgot-pass-email');
+    if(email.value.length !== 0) {
+      firebase.auth().sendPasswordResetEmail(email.value)
+        .then(() => alert('New Password sent'))
+        .catch((error) => {
+          if(error.code === 'auth/invalid-email') {
+            alert("This email doesn't exist.")
+          }
+        })
+    } else {
+      alert("E-Mail field can't be empty.")
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <AppHeader 
           signUp={ this.signUp }
           signIn={ this.signIn }
+          resetPass={ this.resetPass }
         />
         <p className="App-intro">
         </p>

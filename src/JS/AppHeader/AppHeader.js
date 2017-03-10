@@ -73,6 +73,7 @@ export default class AppHeader extends Component {
           openNewPassForm={ this.openNewPassForm }
           signUp={ this.props.signUp }
           signIn={ this.props.signIn }
+          resetPass={ this.props.resetPass }
         />
       </div>
     )

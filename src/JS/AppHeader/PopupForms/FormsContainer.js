@@ -20,6 +20,7 @@ export default class FormsContainer extends Component {
         />
         <ForgotPassForm 
           isSelectedNewPasswordForm={ this.props.isSelectedNewPasswordForm }
+          resetPass={ this.props.resetPass }
         />
       </div>
     )

@@ -18,6 +18,7 @@ export default class SignInPopup extends Component {
             isSelectedNewPasswordForm={ this.props.isSelectedNewPasswordForm }
             signIn={ this.props.signIn }
             signUp={ this.props.signUp }
+            resetPass={ this.props.resetPass }
           />
       </div>
     )

@@ -7,8 +7,8 @@ export default class ForgotPassForm extends Component {
       <form className={ `${ this.props.isSelectedNewPasswordForm ? 'show' : 'hide' }` }>
         <h2>Get new password</h2>
         <p>E-Mail:</p>
-        <input type='email' />
-        <input type='button' className='sign-in-popup-btn' value='Send' />
+        <input id='forgot-pass-email' type='email' />
+        <input type='button' onClick={ this.props.resetPass } className='sign-in-popup-btn' value='Send' />
       </form>
     )
   }
