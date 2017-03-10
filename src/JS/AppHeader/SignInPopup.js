@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../../styles/CSS/AppHeader.css';
 
+import FormsContainer from './PopupForms/FormsContainer';
+
 export default class SignInPopup extends Component {
   render() {
     return(
@@ -11,34 +13,12 @@ export default class SignInPopup extends Component {
           <h3 id='forgot-pass'>Forgot password?</h3>
           <p id='get-new-pass' onClick={ this.props.openNewPassForm }>> Get new password</p>
         </div>
-        <div className='right-popup-container'>
-          <form id='sign-in-form' className={ `${ this.props.isSelectedJoinForm ? 'hide' : 'show'} ${ this.props.isSelectedNewPasswordForm ? 'hide' : 'show' }` }>
-            <h2>Sign In</h2>
-            <p>E-Mail:</p>
-            <input id='sign-in-email' type='email' required/>
-            <p>Password:</p>
-            <input id='sign-in-pass' type='password' required/>
-            <input type='button' className='sign-in-popup-btn' onClick={ this.props.signIn } value='Sign In' />
-          </form>
-          
-          <form id='sign-up-form' className={ `${ this.props.isSelectedJoinForm ? 'show' : 'hide' } ${ this.props.isSelectedNewPasswordForm ? 'hide' : 'show' }` }>
-            <h2>Join</h2>
-            <p>E-Mail:</p>
-            <input id='sign-up-email' type='email' required/>
-            <p>Password:</p>
-            <input id='sign-up-pass' type='password' required/>
-            <p>Confirm Passowrd:</p>
-            <input id='sign-up-conf-pass' type='password' required/>
-            <input type='button' className='sign-in-popup-btn' onClick={ this.props.signUp } value='Sign Up' />
-          </form>
-          
-          <form className={ `${ this.props.isSelectedNewPasswordForm ? 'show' : 'hide' } ${ this.props.isSelectedJoinForm ? 'hide' : 'show'}` }>
-            <h2>Get new password</h2>
-            <p>E-Mail:</p>
-            <input type='email' />
-            <input type='button' className='sign-in-popup-btn' value='Send' />
-          </form>
-        </div>
+          <FormsContainer
+            isSelectedJoinForm={ this.props.isSelectedJoinForm }
+            isSelectedNewPasswordForm={ this.props.isSelectedNewPasswordForm }
+            signIn={ this.props.signIn }
+            signUp={ this.props.signUp }
+          />
       </div>
     )
   }
