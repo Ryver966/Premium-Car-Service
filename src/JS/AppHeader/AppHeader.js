@@ -63,6 +63,7 @@ export default class AppHeader extends Component {
           isUserLogged={ this.props.isUserLogged }
           isOpenedUserPopup={ this.props.isOpenedUserPopup }
           openUserPopup={ this.props.openUserPopup }
+          signOut={ this.props.signOut }
         />
         <SignInPopup 
           isOpenSignInPop={ this.props.isOpenedSignInPopup } 

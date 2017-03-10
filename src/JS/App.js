@@ -18,6 +18,7 @@ export default class App extends Component {
     super(props);
     this.signUp = this.signUp.bind(this),
     this.signIn = this.signIn.bind(this),
+    this.signOut = this.signOut.bind(this),
     this.resetPass = this.resetPass.bind(this),
     this.openPopup = this.openPopup.bind(this),
     this.openUserPopup = this.openUserPopup.bind(this)
@@ -90,6 +91,13 @@ export default class App extends Component {
     };
   };
 
+  signOut() {
+    firebase.auth().signOut();
+    this.setState({
+      isUserLogged: false
+    })
+  }
+
   resetPass() {
     const email = document.getElementById('forgot-pass-email');
     if(email.value.length !== 0) {
@@ -111,6 +119,7 @@ export default class App extends Component {
         <AppHeader 
           signUp={ this.signUp }
           signIn={ this.signIn }
+          signOut={ this.signOut }
           resetPass={ this.resetPass }
           isUserLogged={ this.state.isUserLogged }
           isOpenedSignInPopup={ this.state.isOpenedSignInPopup }

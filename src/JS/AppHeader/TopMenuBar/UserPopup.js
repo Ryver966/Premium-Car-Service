@@ -9,7 +9,7 @@ export default class UserPopup extends Component {
         <h4>Hello!</h4>
         <li>> My Account</li>
         <li>> Check Our Offer</li>
-        <li>> Sign Out</li>
+        <li onClick={ this.props.signOut }>> Sign Out</li>
       </ul>
     )
   }
