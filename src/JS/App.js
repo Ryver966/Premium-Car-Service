@@ -19,19 +19,26 @@ export default class App extends Component {
     this.signUp = this.signUp.bind(this),
     this.signIn = this.signIn.bind(this),
     this.resetPass = this.resetPass.bind(this),
-    this.openPopup = this.openPopup.bind(this)
+    this.openPopup = this.openPopup.bind(this),
+    this.openUserPopup = this.openUserPopup.bind(this)
 
     this.state = {
       isUserLogged: false,
-      isOpenedSignInPopup: false
+      isOpenedSignInPopup: false,
+      isOpenedUserPopup: false
     }
+  };
+
+  openUserPopup() {
+    this.setState({
+      isOpenedUserPopup: !this.state.isOpenedUserPopup
+    });
   };
 
   openPopup() {
     this.setState({
       isOpenedSignInPopup: !this.state.isOpenedSignInPopup
     });
-    console.log(this.state.isOpenedSignInPopup)
   };
 
   signIn() {
@@ -107,7 +114,9 @@ export default class App extends Component {
           resetPass={ this.resetPass }
           isUserLogged={ this.state.isUserLogged }
           isOpenedSignInPopup={ this.state.isOpenedSignInPopup }
+          isOpenedUserPopup={ this.state.isOpenedUserPopup }
           openPopup={ this.openPopup }
+          openUserPopup={ this.openUserPopup }
         />
         <p className="App-intro">
         </p>

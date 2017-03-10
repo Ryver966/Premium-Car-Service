@@ -61,7 +61,8 @@ export default class AppHeader extends Component {
         <AppMenuBar 
           openPopup={ this.props.openPopup }
           isUserLogged={ this.props.isUserLogged }
-          isOpenSignInPop={ this.state.isOpenedSignInPopup } 
+          isOpenedUserPopup={ this.props.isOpenedUserPopup }
+          openUserPopup={ this.props.openUserPopup }
         />
         <SignInPopup 
           isOpenSignInPop={ this.props.isOpenedSignInPopup } 

@@ -10,6 +10,8 @@ export default class AppHeader extends Component {
         <TopMenuBar
           openPopup={ this.props.openPopup }
           isUserLogged={ this.props.isUserLogged }
+          isOpenedUserPopup={ this.props.isOpenedUserPopup }
+          openUserPopup={ this.props.openUserPopup }
           />
         <ul className='btn-list'>
           <li>About Us</li>
