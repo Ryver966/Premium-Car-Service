@@ -9,13 +9,21 @@ export default class AppHeader extends Component {
     super(props);
     this.openJoinForm = this.openJoinForm.bind(this);
     this.openNewPassForm = this.openNewPassForm.bind(this);
+    this.openMobileMenu = this.openMobileMenu.bind(this);
 
     this.state = {
       isOpenedSignInPopup: this.props.isOpenedSignInPopup,
       isSelectedJoinForm: false,
-      isSelectedNewPasswordForm: false
+      isSelectedNewPasswordForm: false,
+      isOpenedMobileMenu: false
     }
   }
+
+openMobileMenu() {
+  this.setState({
+    isOpenedMobileMenu: !this.state.isOpenedMobileMenu
+  });
+};
 
   openNewPassForm() {
     const getNewPass = document.getElementById('get-new-pass');
@@ -62,8 +70,10 @@ export default class AppHeader extends Component {
           openPopup={ this.props.openPopup }
           isUserLogged={ this.props.isUserLogged }
           isOpenedUserPopup={ this.props.isOpenedUserPopup }
+          isOpenedMobileMenu={ this.state.isOpenedMobileMenu }
           openUserPopup={ this.props.openUserPopup }
           signOut={ this.props.signOut }
+          openMobileMenu={ this.openMobileMenu }
         />
         <SignInPopup 
           isOpenSignInPop={ this.props.isOpenedSignInPopup } 

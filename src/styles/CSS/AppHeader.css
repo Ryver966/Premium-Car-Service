@@ -180,12 +180,55 @@
   color: #ffdc0c;
   cursor: pointer;
 }
-@media screen and (max-width: 800px){
+.nav-icon{
+  height: 45px;
+  width: 60px;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  top: 60px;
+  left: 80px;
+}
+.nav-icon span{
+  height: 9px;
+  width: 100%;
+  background-color: #818181;
+  border-radius: 9px;
+  margin-bottom: 6px;
+  display: none;
+}
+@media screen and (max-width: 730px){
   .sign-in-popup{
     width: 100%;
     margin-right: 0;
   }
   .sign-in-btn{
     width: 100px;
+    content: 'test';
+  }
+  .btn-list li{
+    display: none;
+  }
+  .nav-icon span{
+    display: block;
+  }
+  .mobile-list{
+    margin-top: -25px;
+    width: 100%;
+    background-color: #212121;
+    display: none;
+  }
+  .show{
+    display: block;
+  }
+  .mobile-list li{
+    display: block;
+    float: none;
+    width: 100%;
+    border-top: none;
+    border-bottom: 1px solid #ffdc0c;
+  }
+  .mobile-list li:hover{
+    width: 100%;
   }
 }
