@@ -74,6 +74,7 @@ openMobileMenu() {
           openUserPopup={ this.props.openUserPopup }
           signOut={ this.props.signOut }
           openMobileMenu={ this.openMobileMenu }
+          openUserOffer={ this.props.openUserOffer }
         />
         <SignInPopup 
           isOpenSignInPop={ this.props.isOpenedSignInPopup } 

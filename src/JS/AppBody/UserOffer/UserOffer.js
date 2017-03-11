@@ -8,7 +8,7 @@ import Exclusive from './Exclusive';
 export default class UserOffer extends Component {
   render() {
     return(
-      <div className={ `user-offer` }>
+      <div className={ `user-offer ${ this.props.isSelectedUserOffer ? 'show' : '' } ${ this.props.isUserLogged ? '' : 'hide' }` }>
         <div className='offer-container'>
           <Exclusive />
           <Premium />

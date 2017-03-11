@@ -14,6 +14,7 @@ export default class AppHeader extends Component {
           openUserPopup={ this.props.openUserPopup }
           signOut={ this.props.signOut }
           openMobileMenu={ this.props.openMobileMenu }
+          openUserOffer={ this.props.openUserOffer }
           />
         <ul className={ `btn-list mobile-list ${ this.props.isOpenedMobileMenu ? 'show' : '' }` }>
           <li>About Us</li>

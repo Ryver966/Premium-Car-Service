@@ -22,13 +22,21 @@ export default class App extends Component {
     this.signOut = this.signOut.bind(this),
     this.resetPass = this.resetPass.bind(this),
     this.openPopup = this.openPopup.bind(this),
-    this.openUserPopup = this.openUserPopup.bind(this)
+    this.openUserPopup = this.openUserPopup.bind(this),
+    this.openUserOffer = this.openUserOffer.bind(this)
 
     this.state = {
       isUserLogged: false,
       isOpenedSignInPopup: false,
-      isOpenedUserPopup: false
+      isOpenedUserPopup: false,
+      isSelectedUserOffer: false
     }
+  };
+
+  openUserOffer() {
+    this.setState({
+      isSelectedUserOffer: true
+    });
   };
 
   openUserPopup() {
@@ -98,6 +106,7 @@ export default class App extends Component {
     this.setState({
       isUserLogged: false
     })
+    location.reload();
   }
 
   resetPass() {
@@ -128,8 +137,12 @@ export default class App extends Component {
           isOpenedUserPopup={ this.state.isOpenedUserPopup }
           openPopup={ this.openPopup }
           openUserPopup={ this.openUserPopup }
+          openUserOffer={ this.openUserOffer }
         />
-        <AppBody />
+        <AppBody 
+          isSelectedUserOffer={ this.state.isSelectedUserOffer }
+          isUserLogged={ this.state.isUserLogged }
+        />
       </div>
     );
   }

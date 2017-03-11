@@ -7,7 +7,7 @@ export default class UserPopup extends Component {
       <ul className={ `user-popup ${ this.props.isOpenedUserPopup ? 'show' : 'hide' }` }>
         <h4>Hello!</h4>
         <li>> My Account</li>
-        <li>> Check Our Offer</li>
+        <li onClick={ this.props.openUserOffer }>> Check Our Offer</li>
         <li onClick={ this.props.signOut }>> Sign Out</li>
       </ul>
     )

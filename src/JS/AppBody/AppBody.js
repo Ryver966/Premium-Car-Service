@@ -7,7 +7,10 @@ export default class AppBody extends Component {
   render() {
     return(
       <div className='App-body'>
-        <UserOffer />
+        <UserOffer 
+          isSelectedUserOffer={ this.props.isSelectedUserOffer } 
+          isUserLogged={ this.props.isUserLogged }
+        />
       </div>
     )
   }

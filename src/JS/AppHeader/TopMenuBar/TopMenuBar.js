@@ -15,6 +15,7 @@ export default class TopMenuBar extends Component {
         <UserPanel 
           isUserLogged={ this.props.isUserLogged } 
           isOpenedUserPopup={ this.props.isOpenedUserPopup }
+          openUserOffer={ this.props.openUserOffer }
           openUserPopup={ this.props.openUserPopup }
           signOut={ this.props.signOut }
         />
