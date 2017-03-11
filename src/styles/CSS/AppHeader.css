@@ -83,13 +83,14 @@
   display: block;
 }
 .right-popup-container{
-  width: 400px;
-  height: 410px;
+  width: 58%;
+  height: 440px;
   border-left: 1px solid #ffdc0c;
   float: right;
   padding-top: 10px;
 }
 .left-popup-container{
+  width: 35%;
   float: left;
   text-align: left;
   padding-left: 20px;
@@ -178,4 +179,13 @@
 .user-popup li:hover{
   color: #ffdc0c;
   cursor: pointer;
+}
+@media screen and (max-width: 800px){
+  .sign-in-popup{
+    width: 100%;
+    margin-right: 0;
+  }
+  .sign-in-btn{
+    width: 100px;
+  }
 }

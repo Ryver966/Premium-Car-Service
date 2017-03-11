@@ -38,7 +38,8 @@ export default class App extends Component {
 
   openPopup() {
     this.setState({
-      isOpenedSignInPopup: !this.state.isOpenedSignInPopup
+      isOpenedSignInPopup: !this.state.isOpenedSignInPopup,
+      isOpenedUserPopup: false
     });
   };
 
