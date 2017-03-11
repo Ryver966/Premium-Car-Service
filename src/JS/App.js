@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase'
 import '../styles/CSS/App.css';
 
-import AppHeader from'./AppHeader/AppHeader';
+import AppHeader from './AppHeader/AppHeader';
+import AppBody from './AppBody/AppBody';
 
   const config = {
     apiKey: "AIzaSyAuadIPLnAcxuzC0C_qMskmht3-PE7sEGA",
@@ -128,8 +129,7 @@ export default class App extends Component {
           openPopup={ this.openPopup }
           openUserPopup={ this.openUserPopup }
         />
-        <p className="App-intro">
-        </p>
+        <AppBody />
       </div>
     );
   }

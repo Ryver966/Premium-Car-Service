@@ -187,7 +187,7 @@
   float: right;
   position: relative;
   top: 60px;
-  left: 80px;
+  left: 60px;
 }
 .nav-icon span{
   height: 9px;
@@ -230,5 +230,9 @@
   }
   .mobile-list li:hover{
     width: 100%;
+  }
+  .user-avatar{
+    width: 45px;
+    height: 45px;
   }
 }
