@@ -7,7 +7,6 @@ export default class MyAccountMenu extends Component{
       <div className='my-account-menu'>
         <h1>Hello!</h1>
         <ul>
-          <li>My Profile</li>
           <li>Edit My Profile</li>
           <li>My Package</li>
           <li>Add Visa Card</li>

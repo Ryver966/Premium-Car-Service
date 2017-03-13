@@ -72,6 +72,10 @@
   bottom: 0;
   background-color: #fff;
 }
+.right-container{
+  float: right;
+  width: calc(78% - 2px);
+}
 .my-account-menu{
   float: left;
   width: 22%;
@@ -98,15 +102,22 @@
 .my-account-menu ul li:hover{
   color: #ffdc0c;
 }
-.my-profile{
-  float: right;
-  width: calc(78% - 2px);
+.edit-profile-btn{
+  margin-top: 30px;
+  width: 25%;
+  background-color: #ffdc0c;
+  cursor: pointer;
 }
-.my-profile p {
-  color: #717171;
+.edit-profile-btn:hover{
+  opacity: 0.6;
 }
-
-
+.edit-my-profile input{
+  height: 30px;
+  background-color: #515151;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+}
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{
     margin: auto;
