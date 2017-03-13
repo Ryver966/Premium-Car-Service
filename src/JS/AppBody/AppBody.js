@@ -12,7 +12,7 @@ export default class AppBody extends Component {
           isSelectedUserOffer={ this.props.isSelectedUserOffer } 
           isUserLogged={ this.props.isUserLogged }
         />
-        <MyAccount />
+        <MyAccount isSelectedMyAccount={ this.props.isSelectedMyAccount } />
       </div>
     )
   }

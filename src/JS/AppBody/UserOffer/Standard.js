@@ -16,7 +16,7 @@ export default class Standard extends Component {
           <li>- It was popularised in the 1960s</li>
           <li className='more-btn'>- See More..</li>
         </ul>
-        <input type='button' class='user-offer-btn' value='Get for 75$ / Month' />
+        <input type='button' className='user-offer-btn' value='Get for 75$ / Month' />
       </div>
     )
   }

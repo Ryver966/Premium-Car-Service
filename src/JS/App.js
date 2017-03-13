@@ -23,14 +23,23 @@ export default class App extends Component {
     this.resetPass = this.resetPass.bind(this),
     this.openPopup = this.openPopup.bind(this),
     this.openUserPopup = this.openUserPopup.bind(this),
-    this.openUserOffer = this.openUserOffer.bind(this)
+    this.openUserOffer = this.openUserOffer.bind(this),
+    this.openMyAccount = this.openMyAccount.bind(this)
 
     this.state = {
       isUserLogged: false,
       isOpenedSignInPopup: false,
       isOpenedUserPopup: false,
-      isSelectedUserOffer: false
+      isSelectedUserOffer: false,
+      isSelectedMyAccount: false
     }
+  };
+
+  openMyAccount() {
+    console.log('test')
+    this.setState({
+      isSelectedMyAccount: true
+    });
   };
 
   openUserOffer() {
@@ -63,7 +72,7 @@ export default class App extends Component {
               isUserLogged: true,
               isOpenedSignInPopup: false
             })
-        console.log(this.state.isOpenedSignInPopup)
+        console.log(firebase.auth().currentUser());
         email.value = '';
         pass.value = '';
       })
@@ -88,6 +97,9 @@ export default class App extends Component {
         firebase.auth().createUserWithEmailAndPassword(email.value, pass.value)
           .then(() => {
             alert('Account created.');
+            firebase.auth().currentUser.updateProfile({
+              userPackage: 'none'
+            })
           })
           .catch((error) => {
             console.log(error);
@@ -139,10 +151,12 @@ export default class App extends Component {
           openPopup={ this.openPopup }
           openUserPopup={ this.openUserPopup }
           openUserOffer={ this.openUserOffer }
+          openMyAccount={ this.openMyAccount }
         />
         <AppBody 
           isSelectedUserOffer={ this.state.isSelectedUserOffer }
           isUserLogged={ this.state.isUserLogged }
+          isSelectedMyAccount={ this.state.isSelectedMyAccount }
         />
       </div>
     );

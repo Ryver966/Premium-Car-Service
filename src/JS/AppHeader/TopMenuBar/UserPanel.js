@@ -16,6 +16,7 @@ export default class UserPanel extends Component {
           isOpenedUserPopup={ this.props.isOpenedUserPopup } 
           signOut={this.props.signOut}
           openUserOffer={ this.props.openUserOffer }
+          openMyAccount={ this.props.openMyAccount }
         />
       </div>
     )
