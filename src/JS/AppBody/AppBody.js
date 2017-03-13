@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../../styles/CSS/AppBody.css';
 
-import UserOffer from './UserOffer/UserOffer'
+import UserOffer from './UserOffer/UserOffer';
+import MyAccount from './MyAccount/MyAccount';
 
 export default class AppBody extends Component {
   render() {
@@ -11,6 +12,7 @@ export default class AppBody extends Component {
           isSelectedUserOffer={ this.props.isSelectedUserOffer } 
           isUserLogged={ this.props.isUserLogged }
         />
+        <MyAccount />
       </div>
     )
   }
