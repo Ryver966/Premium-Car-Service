@@ -6,7 +6,7 @@ export default class Exclusive extends Component {
     return(
       <div className='user-packages'>
         <h1>Exclusive</h1>
-        <img src={ require('../../../styles/img/exclusive.jpg') } width='390px' height='150px' />
+        <img src={ require('../../../styles/img/exclusive.jpg') } width='90%' height='150px' />
         <h2>You Recive:</h2>
         <ul>
           <li>- Lorem Ipsum</li>

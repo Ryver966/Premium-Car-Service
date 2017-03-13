@@ -6,7 +6,7 @@ export default class Premium extends Component {
     return(
       <div className='user-packages'>
         <h1>Premium</h1>
-        <img src={ require('../../../styles/img/premium.jpg') } width='390px' height='150px' />
+        <img src={ require('../../../styles/img/premium.jpg') } width='90%' height='150px' />
         <h2>You Recive:</h2>
         <ul>
           <li>- Is simply dummy text of the printing</li>

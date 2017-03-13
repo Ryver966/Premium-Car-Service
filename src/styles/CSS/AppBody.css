@@ -1,6 +1,6 @@
 .App-body{
   width: 100%;
-  height: calc(100% - 122px);
+  height: calc(110%);
   margin: 0;
   padding: 0;
 }
@@ -11,12 +11,13 @@
 }
 .user-packages{
   height: 600px;
-  width: 400px;
+  width: 30%;
   background-color: #fff;
+  margin-right: 20px;
   float: left;
-  margin-left: 40px;
   border: 2px solid #ffdc0c;
   border-radius: 10px;
+  position: relative;
 }
 .user-packages:hover{
   transform: scale(1.1);
@@ -39,10 +40,9 @@
   top: 50%;
   left: 50%;
   margin-top: -300px;
-  margin-left: -695px;
-  padding-left: 60px;
+  margin-left: -650px;
   height: 600px;
-  width: 1390px;
+  width: 1300px;
 }
 .user-packages input{
   border: none;
@@ -63,4 +63,48 @@
 }
 .hide{
   display: none;
+}
+@media screen and (min-width: 731px) and ( max-width: 1271px){
+  .offer-container{
+    margin: auto;
+    float: left;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    margin-left: calc(50% - 365px);
+    width: 730px;
+  }
+  .user-packages{
+    width: 30%;
+    position: relative;
+  }
+  .user-packages ul{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 730px){
+  .user-packages{
+    width: 90%;
+    height: 95%;
+    margin: 0;
+    float: left;
+    position: relative;
+    left: 5%;
+    margin-bottom: 40px;
+  }
+  .offer-container{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    position: relative;
+    top: 150px;
+  }
+  .user-offer{
+    margin-left: -50%;
+    text-align: center;
+  }
+  .user-packages ul{
+    font-size: 14px;
+  }
 }

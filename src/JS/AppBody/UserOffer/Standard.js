@@ -6,7 +6,7 @@ export default class Standard extends Component {
     return(
       <div className='user-packages'>
         <h1>Standard</h1>
-        <img src={ require('../../../styles/img/standard.jpg') } width='390px' height='150px' />
+        <img src={ require('../../../styles/img/standard.jpg') } width='90%' height='150px' />
         <h2>You Recive:</h2>
         <ul>
           <li>- All the Lorem Ipsum generators</li>

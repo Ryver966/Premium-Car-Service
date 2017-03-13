@@ -35,7 +35,8 @@ export default class App extends Component {
 
   openUserOffer() {
     this.setState({
-      isSelectedUserOffer: true
+      isSelectedUserOffer: true,
+      isOpenedUserPopup: false
     });
   };
 

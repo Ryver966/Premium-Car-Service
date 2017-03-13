@@ -1,9 +1,12 @@
 .App-header {
   background-color: #515151;
   height: 120px;
+  width: 100%;
   padding: 0;
   color: white;
   border-bottom: 2px solid #ffdc0c;
+  position: fixed;
+  z-index: 99;
 }
 .header-logo{
   float: left;
