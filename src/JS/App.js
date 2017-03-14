@@ -119,7 +119,7 @@ export default class App extends Component {
     this.setState({
       isUserLogged: false
     })
-    location.reload();
+    window.location.href = '/';
   }
 
   resetPass() {
@@ -153,11 +153,7 @@ export default class App extends Component {
           openUserOffer={ this.openUserOffer }
           openMyAccount={ this.openMyAccount }
         />
-        <AppBody 
-          isSelectedUserOffer={ this.state.isSelectedUserOffer }
-          isUserLogged={ this.state.isUserLogged }
-          isSelectedMyAccount={ this.state.isSelectedMyAccount }
-        />
+        { this.props.children }
       </div>
     );
   }

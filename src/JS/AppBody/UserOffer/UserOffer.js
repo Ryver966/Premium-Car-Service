@@ -39,7 +39,7 @@ const offer = [
 export default class UserOffer extends Component {
   render() {
     return(
-      <div className={ `user-offer ${ this.props.isSelectedUserOffer ? 'show' : '' } ${ this.props.isUserLogged ? '' : 'hide' }` }>
+      <div className={ `user-offer ${ this.props.isSelectedUserOffer ? 'show' : 'show' } ${ this.props.isUserLogged ? '' : '' }` }>
         <div className='offer-container'>
           <OfferCard offer={ offer[2] } />
           <OfferCard offer={ offer[1] } />

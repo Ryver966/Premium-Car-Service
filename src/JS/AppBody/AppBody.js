@@ -8,10 +8,7 @@ export default class AppBody extends Component {
   render() {
     return(
       <div className='App-body'>
-        <UserOffer 
-          isSelectedUserOffer={ this.props.isSelectedUserOffer } 
-          isUserLogged={ this.props.isUserLogged }
-        />
+        <p>Test</p>
         <MyAccount isSelectedMyAccount={ this.props.isSelectedMyAccount } />
       </div>
     )
