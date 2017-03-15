@@ -9,6 +9,7 @@ import MyAccount from './JS/AppBody/MyAccount/MyAccount';
 import EditMyProfile from './JS/AppBody/MyAccount/EditMyProfile';
 import MyPackage from './JS/AppBody/MyAccount/MyPackage';
 import PaymentCards from './JS/AppBody/MyAccount/PaymentCards';
+import NeedHelp from './JS/AppBody/MyAccount/NeedHelp';
 
 
 
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Route path='/MyAccount/EditMyProfile' component={ EditMyProfile } />
           <Route path='/MyAccount/MyPackage' component={ MyPackage } />
           <Route path='/MyAccount/PAymentCards' component={ PaymentCards } />
+          <Route path='/MyAccount/NeedHelp' component={ NeedHelp } />
         </Route>
     </Route>
   </Router>
