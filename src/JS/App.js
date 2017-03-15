@@ -23,7 +23,8 @@ export default class App extends Component {
     this.openPopup = this.openPopup.bind(this),
     this.openUserPopup = this.openUserPopup.bind(this),
     this.openUserOffer = this.openUserOffer.bind(this),
-    this.openMyAccount = this.openMyAccount.bind(this)
+    this.openMyAccount = this.openMyAccount.bind(this),
+    this.checkUser = this.checkUser.bind(this)
 
     this.state = {
       isUserLogged: false,
@@ -78,6 +79,7 @@ export default class App extends Component {
           alert(error.message);
         }
       });
+      this.checkUser();
   }
 
   signUp() {
@@ -107,15 +109,20 @@ export default class App extends Component {
               passConf.value = '';
             }
           });
+          this.checkUser();
       };
     };
   };
 
   signOut() {
-    firebase.auth().signOut();
-    this.setState({
-      isUserLogged: false
+    firebase.auth().signOut()
+    .then(() =>{
+      console.log(this.state.isUserLogged);
     })
+    .catch((error) => {
+      console.log(error)
+    })
+    this.checkUser();
     window.location.href = '/';
   }
 
@@ -134,10 +141,21 @@ export default class App extends Component {
     }
   }
 
+  checkUser() {
+    firebase.auth().onAuthStateChanged((user) => {
+        if(user) {
+          this.setState({isUserLogged: true})
+        } else {
+          this.setState({isUserLogged: false})
+        }
+      })
+  }
+
   render() {
+
     return (
       <div className="App">
-        <AppHeader 
+        {<AppHeader 
           signUp={ this.signUp }
           signIn={ this.signIn }
           signOut={ this.signOut }
@@ -149,7 +167,7 @@ export default class App extends Component {
           openUserPopup={ this.openUserPopup }
           openUserOffer={ this.openUserOffer }
           openMyAccount={ this.openMyAccount }
-        />
+        />}
         { this.props.children }
       </div>
     );

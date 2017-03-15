@@ -80,6 +80,7 @@ openMobileMenu() {
         <SignInPopup 
           isOpenSignInPop={ this.props.isOpenedSignInPopup } 
           isSelectedJoinForm={ this.state.isSelectedJoinForm }
+          isUserLogged={ this.props.isUserLogged }
           isSelectedNewPasswordForm={ this.state.isSelectedNewPasswordForm }
           openJoinForm ={ this.openJoinForm }
           openNewPassForm={ this.openNewPassForm }

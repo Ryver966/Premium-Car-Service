@@ -177,16 +177,13 @@
   color: #ffdc0c;
   text-align: center;
 }
-.user-popup li{
-  padding-bottom: 8px;
-  text-decoration: none;
-}
-.user-popup link:visited{
+.user-li{
   color: #fff;
-}
-.user-popup li:hover{
-  color: #ffdc0c;
+  text-decoration: none;
   cursor: pointer;
+}
+.user-li:hover{
+  color: #ffdc0c;
 }
 .nav-icon{
   height: 45px;
