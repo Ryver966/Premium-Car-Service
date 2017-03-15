@@ -27,7 +27,7 @@ export default class App extends Component {
     this.checkUser = this.checkUser.bind(this)
 
     this.state = {
-      isUserLogged: false,
+      isUserLogged: this.checkUser(),
       isOpenedSignInPopup: false,
       isOpenedUserPopup: false,
     }
@@ -67,7 +67,6 @@ export default class App extends Component {
     firebase.auth().signInWithEmailAndPassword(email.value, pass.value)
       .then((success) => {
             this.setState({
-              isUserLogged: true,
               isOpenedSignInPopup: false
             })
         console.log(firebase.auth().currentUser());
@@ -79,7 +78,6 @@ export default class App extends Component {
           alert(error.message);
         }
       });
-      this.checkUser();
   }
 
   signUp() {
@@ -96,9 +94,13 @@ export default class App extends Component {
         firebase.auth().createUserWithEmailAndPassword(email.value, pass.value)
           .then(() => {
             alert('Account created.');
+            this.setState({ isOpenedSignInPopup: false })
             firebase.auth().currentUser.updateProfile({
-              userPackage: 'none'
-            })
+              userPackage: 'none',
+              firstName: 'none',
+              lastName: 'none',
+              gender: 'none'
+            }).then((currentUser) => { console.log(currentUser.firstName) })
           })
           .catch((error) => {
             console.log(error);
@@ -109,7 +111,6 @@ export default class App extends Component {
               passConf.value = '';
             }
           });
-          this.checkUser();
       };
     };
   };
@@ -122,7 +123,6 @@ export default class App extends Component {
     .catch((error) => {
       console.log(error)
     })
-    this.checkUser();
     window.location.href = '/';
   }
 
@@ -152,10 +152,9 @@ export default class App extends Component {
   }
 
   render() {
-
     return (
       <div className="App">
-        {<AppHeader 
+        <AppHeader 
           signUp={ this.signUp }
           signIn={ this.signIn }
           signOut={ this.signOut }
@@ -167,7 +166,7 @@ export default class App extends Component {
           openUserPopup={ this.openUserPopup }
           openUserOffer={ this.openUserOffer }
           openMyAccount={ this.openMyAccount }
-        />}
+        />
         { this.props.children }
       </div>
     );
