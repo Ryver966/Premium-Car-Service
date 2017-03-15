@@ -78,6 +78,7 @@ export default class App extends Component {
           alert(error.message);
         }
       });
+      
   }
 
   signUp() {
@@ -95,12 +96,6 @@ export default class App extends Component {
           .then(() => {
             alert('Account created.');
             this.setState({ isOpenedSignInPopup: false })
-            firebase.auth().currentUser.updateProfile({
-              userPackage: 'none',
-              firstName: 'none',
-              lastName: 'none',
-              gender: 'none'
-            }).then((currentUser) => { console.log(currentUser.firstName) })
           })
           .catch((error) => {
             console.log(error);
@@ -116,13 +111,7 @@ export default class App extends Component {
   };
 
   signOut() {
-    firebase.auth().signOut()
-    .then(() =>{
-      console.log(this.state.isUserLogged);
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+    firebase.auth().signOut();
     window.location.href = '/';
   }
 

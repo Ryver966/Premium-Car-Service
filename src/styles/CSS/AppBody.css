@@ -95,10 +95,19 @@
 .my-account-menu ul li:hover{
   color: #ffdc0c;
 }
+.edit-my-profile{
+  margin-top: 10%;
+}
+.edit-my-profile h1{
+  margin-bottom: 80px;
+}
 .edit-profile-btn{
   margin-top: 30px;
   width: 25%;
-  background-color: #ffdc0c;
+  height: 30px;
+  background-color: #212121;
+  color: #FFF;
+  border: none;
   cursor: pointer;
 }
 .edit-profile-btn:hover{
@@ -106,9 +115,14 @@
 }
 .edit-my-profile input{
   height: 30px;
+  width: 45%;
   background-color: #515151;
   border: none;
   color: #fff;
+  font-size: 20px;
+}
+.edit-my-profile select{
+  width: 25%;
   font-size: 20px;
 }
 @media screen and (min-width: 731px) and ( max-width: 1271px){
