@@ -6,6 +6,8 @@ export default class MyPackage extends Component {
     return(
       <div className='my-package'>
         <h1>MyPackage</h1>
+        <p>Now you don't have any package</p>
+        <input type='button' value='Get Package!' />
       </div>
     )
   }

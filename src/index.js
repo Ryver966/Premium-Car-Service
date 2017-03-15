@@ -8,6 +8,7 @@ import UserOffer from './JS/AppBody/UserOffer/UserOffer';
 import MyAccount from './JS/AppBody/MyAccount/MyAccount';
 import EditMyProfile from './JS/AppBody/MyAccount/EditMyProfile';
 import MyPackage from './JS/AppBody/MyAccount/MyPackage';
+import PaymentCards from './JS/AppBody/MyAccount/PaymentCards';
 
 
 
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route path='/MyAccount' component={ MyAccount }>
           <Route path='/MyAccount/EditMyProfile' component={ EditMyProfile } />
           <Route path='/MyAccount/MyPackage' component={ MyPackage } />
+          <Route path='/MyAccount/PAymentCards' component={ PaymentCards } />
         </Route>
     </Route>
   </Router>

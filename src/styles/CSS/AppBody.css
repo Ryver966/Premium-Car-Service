@@ -104,7 +104,8 @@
 .edit-profile-btn{
   margin-top: 30px;
   width: 25%;
-  height: 30px;
+  height: 35px;
+  border-radius: 20px;
   background-color: #212121;
   color: #FFF;
   border: none;
@@ -124,6 +125,75 @@
 .edit-my-profile select{
   width: 25%;
   font-size: 20px;
+}
+.my-package{
+  margin-top: 10%;
+}
+.my-package input{
+  border: none;
+  background-color: #4F7131;
+  margin-top: 40px;
+  height: 40px;
+  width: 25%;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+.my-package input:hover{
+  opacity: 0.6;
+}
+
+.my-package p {
+  font-size: 25px;
+}
+.my-package h1{
+  font-size: 40px;
+  margin-bottom: 80px;
+}
+.payment-cards{
+  margin-top: 5%;
+}
+.payment-cards h1{
+  margin-bottom: 80px;
+  font-size: 40px;
+}
+.user-cards{
+  width: 50%;
+  height: 100px;
+  background-color: #717171;
+  margin: auto;
+  color: #FFF;
+  margin-bottom: 20px;
+}
+.payment-cards button{
+  width: 25%;
+  height: 40px;
+  background-color: #515151;
+  color: #FFF;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+}
+.payment-cards button:hover{
+  opacity: 0.6;
+}
+.add-card-popup{
+  width: 50%;
+  height: 370px;
+  margin: 20px auto;
+  background-color: #717171;
+  border: 2px solid #ffdc0c;
+  text-align: center;
+}
+.valid-date{
+  width: 40px;
+}
+.card-ccv{
+  width: 50px;
+}
+.add-card-popup button{
+  margin-top: 15px;
 }
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{
