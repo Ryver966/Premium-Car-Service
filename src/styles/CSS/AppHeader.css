@@ -179,7 +179,10 @@
 }
 .user-popup li{
   padding-bottom: 8px;
-  
+  text-decoration: none;
+}
+.user-popup link:visited{
+  color: #fff;
 }
 .user-popup li:hover{
   color: #ffdc0c;

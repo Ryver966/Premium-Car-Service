@@ -7,10 +7,9 @@ import EditMyProfile from './EditMyProfile';
 export default class MyAccount extends Component {
   render() {
     return(
-      <div className={ `my-account-page ${ this.props.isSelectedMyAccount ? '' : '' }` }>
+      <div className='my-account-page'>
         <MyAccountMenu />
         <div className='right-container'>
-          <EditMyProfile />
         </div>
       </div>
     )
