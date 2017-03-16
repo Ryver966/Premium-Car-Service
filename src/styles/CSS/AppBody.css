@@ -65,6 +65,10 @@
   bottom: 0;
   background-color: #fff;
 }
+.my-account-h1{
+  margin-bottom: 40px;
+  font-size: 40px;
+}
 .right-container{
   float: right;
   width: calc(78% - 2px);
@@ -98,9 +102,6 @@
 .edit-my-profile{
   margin-top: 10%;
 }
-.edit-my-profile h1{
-  margin-bottom: 80px;
-}
 .edit-profile-btn{
   margin-top: 30px;
   width: 25%;
@@ -116,7 +117,7 @@
 }
 .edit-my-profile input{
   height: 30px;
-  width: 45%;
+  width: 30%;
   background-color: #515151;
   border: none;
   color: #fff;
@@ -147,16 +148,8 @@
 .my-package p {
   font-size: 25px;
 }
-.my-package h1{
-  font-size: 40px;
-  margin-bottom: 80px;
-}
 .payment-cards{
   margin-top: 5%;
-}
-.payment-cards h1{
-  margin-bottom: 80px;
-  font-size: 40px;
 }
 .user-cards{
   width: 50%;
@@ -210,10 +203,6 @@
 .need-help{
   margin-top: 10%;
 }
-.need-help h1{
-  font-size: 40px;
-  margin-bottom: 80px;
-}
 .need-help p{
   opacity: 0.7;
   cursor: default;
@@ -232,6 +221,12 @@
   height: 100px;
   margin-top: 20px;
   padding-left: 5px;
+  background-color: #515151;
+  color: #fff;
+}
+.need-help select{
+  background-color: #515151;
+  color: #fff;
 }
 .need-help button{
   width: 10%;
@@ -247,6 +242,44 @@
 }
 .selected{
   color: #ffdc0c;
+}
+.main-page{
+  min-height: calc(100% - 122px);
+  position: relative;
+  top: 122px;
+  left: 10%;
+  width: 80%;
+  background-color: #fff;
+}
+.main-page-welcome{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url('../img/welcome.jpg');
+  background-repeat: no-repeat;
+  background-position: cover;
+  background-size: 100%;
+  color: #fff;
+}
+.text-box{
+  height: 125px;
+  width: 400px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -64.5px;
+  margin-left: -202px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffdc0c;
+}
+.text-box h1{
+  margin-top: -2px;
+  font-size: 40px;
+  color: #ffdc0c;
+}
+.text-box h2{
+  margin-top: -15px;
+  font-size: 30px;
 }
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{

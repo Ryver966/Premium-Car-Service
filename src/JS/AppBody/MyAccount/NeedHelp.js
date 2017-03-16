@@ -5,7 +5,7 @@ export default class NeedHelp extends Component {
   render() {
     return(
       <div className='need-help'>
-        <h1>Need Help?</h1>
+        <h1 className='my-account-h1'>Need Help?</h1>
         <h2>Call to </h2>
         <p>+11 111 11 11</p>
         <p>222 222 222</p>
@@ -18,7 +18,7 @@ export default class NeedHelp extends Component {
           <option>Where does it come from?</option>
           <option>Where can I get some?</option>
         </select> <br />
-        <textarea></textarea><br />
+        <textarea placeholder='Write your message here.'></textarea><br />
         <button>Send</button>
       </div>
     )

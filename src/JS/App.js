@@ -61,7 +61,6 @@ export default class App extends Component {
             this.setState({
               isOpenedSignInPopup: false
             })
-        console.log(firebase.auth().currentUser());
         email.value = '';
         pass.value = '';
       })
@@ -90,7 +89,6 @@ export default class App extends Component {
             this.setState({ isOpenedSignInPopup: false })
           })
           .catch((error) => {
-            console.log(error);
             if(error.code === 'auth/email-already-in-use'|| error.code === 'auth/weak-password') {
               alert(error.message);
               email.value = '';
@@ -161,4 +159,3 @@ export default class App extends Component {
     );
   }
 }
-

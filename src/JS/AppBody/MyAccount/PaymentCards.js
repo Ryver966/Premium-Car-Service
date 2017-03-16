@@ -6,11 +6,9 @@ export default class PaymentCards extends Component {
     super(props)
   }
   render() {
-    console.log(this.props.openAddCardPoup);
-    console.log(this.props.isOpenedAddCardPopup);
     return(
       <div className='payment-cards'>
-        <h1>Payment Cards</h1>
+        <h1 className='my-account-h1'>Payment Cards</h1>
         <div className='user-cards'>
           <h2>Your Cards:</h2>
           <p>None</p>
