@@ -9,7 +9,7 @@ export default class TopMenuBar extends Component {
     return(
       <div>
         <SignInBtn 
-        openPopup={ this.props.openPopup }
+        openPopup={ this.props.openSignInPopup }
         isUserLogged={ this.props.isUserLogged } 
         />
         <UserPanel 
@@ -17,7 +17,7 @@ export default class TopMenuBar extends Component {
           isOpenedUserPopup={ this.props.isOpenedUserPopup }
           openUserOffer={ this.props.openUserOffer }
           openMyAccount={ this.props.openMyAccount }
-          openUserPopup={ this.props.openUserPopup }
+          openPopup={ this.props.openPopup }
           signOut={ this.props.signOut }
         />
         <HamburgerMenu openMobileMenu={ this.props.openMobileMenu } />

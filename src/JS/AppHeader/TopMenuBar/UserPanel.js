@@ -10,7 +10,7 @@ export default class UserPanel extends Component {
         <img 
           className='user-avatar' 
           src={ require('../../../styles/img/default-avatar.png') }
-          onClick={ this.props.openUserPopup } 
+          onClick={ this.props.openPopup } 
         />
         <UserPopup 
           isOpenedUserPopup={ this.props.isOpenedUserPopup } 

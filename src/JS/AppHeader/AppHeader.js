@@ -69,9 +69,10 @@ openMobileMenu() {
         <AppMenuBar 
           openPopup={ this.props.openPopup }
           isUserLogged={ this.props.isUserLogged }
-          isOpenedUserPopup={ this.props.isOpenedUserPopup }
+          isOpenedUserPopup={ this.props.isOpenedPopup }
           isOpenedMobileMenu={ this.state.isOpenedMobileMenu }
           openUserPopup={ this.props.openUserPopup }
+          openSignInPopup={ this.props.openSignInPopup }
           signOut={ this.props.signOut }
           openMobileMenu={ this.openMobileMenu }
           openUserOffer={ this.props.openUserOffer }

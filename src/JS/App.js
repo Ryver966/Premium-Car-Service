@@ -21,7 +21,7 @@ export default class App extends Component {
     this.signOut = this.signOut.bind(this),
     this.resetPass = this.resetPass.bind(this),
     this.openPopup = this.openPopup.bind(this),
-    this.openUserPopup = this.openUserPopup.bind(this),
+    this.openSignInPopup = this.openSignInPopup.bind(this),
     this.openUserOffer = this.openUserOffer.bind(this),
     this.openMyAccount = this.openMyAccount.bind(this),
     this.checkUser = this.checkUser.bind(this)
@@ -29,7 +29,7 @@ export default class App extends Component {
     this.state = {
       isUserLogged: this.checkUser(),
       isOpenedSignInPopup: false,
-      isOpenedUserPopup: false,
+      isOpenedPopup: false,
     }
   };
 
@@ -47,16 +47,16 @@ export default class App extends Component {
     });
   };
 
-  openUserPopup() {
+  openPopup() {
     this.setState({
-      isOpenedUserPopup: !this.state.isOpenedUserPopup
+      isOpenedPopup: !this.state.isOpenedPopup
     });
   };
 
-  openPopup() {
+  openSignInPopup() {
     this.setState({
       isOpenedSignInPopup: !this.state.isOpenedSignInPopup,
-      isOpenedUserPopup: false
+      isOpenedPopup: false
     });
   };
 
@@ -156,9 +156,9 @@ export default class App extends Component {
           resetPass={ this.resetPass }
           isUserLogged={ this.state.isUserLogged }
           isOpenedSignInPopup={ this.state.isOpenedSignInPopup }
-          isOpenedUserPopup={ this.state.isOpenedUserPopup }
+          isOpenedPopup={ this.state.isOpenedPopup }
           openPopup={ this.openPopup }
-          openUserPopup={ this.openUserPopup }
+          openSignInPopup={ this.openSignInPopup }
           openUserOffer={ this.openUserOffer }
           openMyAccount={ this.openMyAccount }
         />

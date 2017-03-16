@@ -161,7 +161,7 @@
 .user-cards{
   width: 50%;
   height: 100px;
-  background-color: #717171;
+  background-color: #515151;
   margin: auto;
   color: #FFF;
   margin-bottom: 20px;
@@ -170,7 +170,7 @@
 .payment-cards button{
   width: 25%;
   height: 40px;
-  background-color: #515151;
+  background-color: #414141;
   color: #FFF;
   cursor: pointer;
   border: none;
@@ -179,12 +179,23 @@
 .payment-cards button:hover{
   opacity: 0.6;
 }
+.add-card-popup::before{
+  position: relative;
+  top: -32px;
+  left: -100px;
+  border: solid transparent;
+  content: '';
+  border-bottom-color: #ffdc0c;
+  border-width: 12px;
+  margin-right: -200px;
+}
 .add-card-popup{
   width: 50%;
-  height: 370px;
+  height: 390px;
   margin: 20px auto;
-  background-color: #717171;
+  background-color: #515151;
   border: 2px solid #ffdc0c;
+  color: #fff;
   text-align: center;
 }
 .valid-date{

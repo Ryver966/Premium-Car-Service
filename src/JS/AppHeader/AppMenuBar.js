@@ -8,6 +8,7 @@ export default class AppHeader extends Component {
     return (
       <div className='navi-btn-container'>
         <TopMenuBar
+          openSignInPopup={ this.props.openSignInPopup }
           openPopup={ this.props.openPopup }
           isUserLogged={ this.props.isUserLogged }
           isOpenedUserPopup={ this.props.isOpenedUserPopup }
