@@ -21,42 +21,34 @@ export default class App extends Component {
     this.signOut = this.signOut.bind(this),
     this.resetPass = this.resetPass.bind(this),
     this.openPopup = this.openPopup.bind(this),
-    this.openSignInPopup = this.openSignInPopup.bind(this),
-    this.openUserOffer = this.openUserOffer.bind(this),
-    this.openMyAccount = this.openMyAccount.bind(this),
-    this.checkUser = this.checkUser.bind(this)
+    this.openUserPopup = this.openUserPopup.bind(this),
+    this.checkUser = this.checkUser.bind(this),
+    this.openAddCardPoup = this.openAddCardPoup.bind(this)
 
     this.state = {
       isUserLogged: this.checkUser(),
       isOpenedSignInPopup: false,
-      isOpenedPopup: false,
+      isOpenedUserPopup: false,
+      isOpenedAddCardPopup: false
     }
   };
 
-  openMyAccount() {
-    console.log('test')
+  openAddCardPoup() {
     this.setState({
-      isSelectedMyAccount: true
-    });
-  };
+      isOpenedAddCardPopup: !this.state.isOpenedAddCardPopup
+    })
+  }
 
-  openUserOffer() {
+  openUserPopup() {
     this.setState({
-      isSelectedUserOffer: true,
-      isOpenedUserPopup: false
+      isOpenedUserPopup: !this.state.isOpenedUserPopup
     });
   };
 
   openPopup() {
     this.setState({
-      isOpenedPopup: !this.state.isOpenedPopup
-    });
-  };
-
-  openSignInPopup() {
-    this.setState({
       isOpenedSignInPopup: !this.state.isOpenedSignInPopup,
-      isOpenedPopup: false
+      isOpenedUserPopup: false
     });
   };
 
@@ -144,6 +136,8 @@ export default class App extends Component {
       const childrenWithProps = React.Children.map(this.props.children,
       (child) => React.cloneElement(child, {
         isUserLogged: this.state.isUserLogged,
+        isOpenedAddCardPopup: this.state.isOpenedAddCardPopup,
+        openAddCardPoup: this.openAddCardPoup,
         signOut: this.signOut
       })
       )
@@ -156,9 +150,9 @@ export default class App extends Component {
           resetPass={ this.resetPass }
           isUserLogged={ this.state.isUserLogged }
           isOpenedSignInPopup={ this.state.isOpenedSignInPopup }
-          isOpenedPopup={ this.state.isOpenedPopup }
+          isOpenedUserPopup={ this.state.isOpenedUserPopup }
           openPopup={ this.openPopup }
-          openSignInPopup={ this.openSignInPopup }
+          openUserPopup={ this.openUserPopup }
           openUserOffer={ this.openUserOffer }
           openMyAccount={ this.openMyAccount }
         />

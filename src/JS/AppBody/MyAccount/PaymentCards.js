@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import '../../../styles/CSS/AppBody.css';
 
 export default class PaymentCards extends Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
+    console.log(this.props.openAddCardPoup);
+    console.log(this.props.isOpenedAddCardPopup);
     return(
       <div className='payment-cards'>
         <h1>Payment Cards</h1>
@@ -10,8 +15,8 @@ export default class PaymentCards extends Component {
           <h2>Your Cards:</h2>
           <p>None</p>
         </div>
-        <button>Add Card</button>
-        <div className={ `add-card-popup` }>
+        <button onClick={ this.props.openAddCardPoup }>Add Card</button>
+        <div className={ `add-card-popup ${ this.props.isOpenedAddCardPopup ? 'show' : 'hide' }` }>
           <p>Card Number</p>
           <input type='number' className='card-info' />
           <p>CCV</p>
