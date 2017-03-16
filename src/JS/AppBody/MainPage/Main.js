@@ -8,9 +8,6 @@ export default class MainPage extends Component {
     return(
       <div className='main-page'>
         <MainPageWelcome />
-        <div>
-          <textarea></textarea>
-        </div>
       </div>
     )
   }
