@@ -11,8 +11,6 @@ import MyPackage from './JS/AppBody/MyAccount/MyPackage';
 import PaymentCards from './JS/AppBody/MyAccount/PaymentCards';
 import NeedHelp from './JS/AppBody/MyAccount/NeedHelp';
 
-
-
 ReactDOM.render(
   <Router history={ browserHistory }>
     <Route path='/' component={ App }>

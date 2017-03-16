@@ -234,6 +234,9 @@
 .need-help button:hover{
   opacity: 0.6;
 }
+.selected{
+  color: #ffdc0c;
+}
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{
     margin: auto;

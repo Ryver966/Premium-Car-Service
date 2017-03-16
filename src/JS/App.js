@@ -141,6 +141,12 @@ export default class App extends Component {
   }
 
   render() {
+      const childrenWithProps = React.Children.map(this.props.children,
+      (child) => React.cloneElement(child, {
+        isUserLogged: this.state.isUserLogged,
+        signOut: this.signOut
+      })
+      )
     return (
       <div className="App">
         <AppHeader 
@@ -156,7 +162,7 @@ export default class App extends Component {
           openUserOffer={ this.openUserOffer }
           openMyAccount={ this.openMyAccount }
         />
-        { this.props.children }
+        {childrenWithProps}
       </div>
     );
   }
