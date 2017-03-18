@@ -9,10 +9,8 @@ export default class MainPageWelcome extends Component {
   }
 
   scrollToBody() {
-    const destination = document.getElementsByClassName('main-page-body')[0].offsetTop;
-    setTimeout(() => {
+      const destination = document.getElementsByClassName('main-page-body')[0].offsetTop;
       window.scroll(0, destination);
-    }, 2000)
   }
   render() {
     return(
