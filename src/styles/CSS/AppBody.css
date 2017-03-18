@@ -360,6 +360,29 @@
 .main-page-body p:hover h1{
   animation: h1Animation 1s;
 }
+.our-team-container{
+  height: 400px;
+  width: 100%;
+  background-color: #313131;
+  position: absolute;
+  left: 0.5%;
+  bottom: 0;
+  color: #fff;
+}
+.single-avatar-container{
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.single-avatar-container img:hover{
+  border: 5px solid #ffdc0c;
+}
+.avatar-img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #ffdc0c;
+}
 
 
 @media screen and (min-width: 731px) and ( max-width: 1271px){
