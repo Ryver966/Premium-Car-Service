@@ -247,9 +247,7 @@
   min-height: calc(100% - 122px);
   position: relative;
   top: 122px;
-  left: 10%;
-  width: 80%;
-  background-color: #fff;
+  width: 100%;
 }
 .main-page-welcome{
   position: absolute;
@@ -257,20 +255,49 @@
   width: 100%;
   background-image: url('../img/welcome.jpg');
   background-repeat: no-repeat;
-  background-position: cover;
-  background-size: 100%;
+  background-attachment: initial;
+  background-position: center;
+  background-size: cover;
   color: #fff;
+}
+.main-page-welcome input{
+  border: none;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 25%;
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin-left: -25px;
+  border: 1px solid #ffdc0c;
+}
+.main-page-welcome input:hover{
+  animation: select 0.8s infinite;
+}
+@keyframes typing{
+    from{ width: 0 }
+    to{ width: 100% }
+}
+@keyframes select{
+  0%{ transform: scale(1) }
+  50%{ transform: scale(1.2) }
+  100%{ transform: scale(1) }
 }
 .text-box{
   height: 125px;
-  width: 400px;
-  position: relative;
+  width: 30%;
+  position: absolute;
   top: 50%;
-  left: 50%;
+  left: 35%;
   margin-top: -64.5px;
-  margin-left: -202px;
   background: rgba(0, 0, 0, 0.5);
   border: 2px solid #ffdc0c;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .text-box h1{
   margin-top: -2px;
@@ -280,6 +307,17 @@
 .text-box h2{
   margin-top: -15px;
   font-size: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: -10px auto;
+  animation: typing 3s;
+}
+.main-page-body{
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{
