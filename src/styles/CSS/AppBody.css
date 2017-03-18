@@ -287,6 +287,24 @@
   50%{ transform: scale(1.2) }
   100%{ transform: scale(1) }
 }
+@keyframes paragrapAnimation{
+  0%{ 
+    background-color: #fff; 
+    color: #000;
+  }
+  100%{
+    background-color: #313131;
+    color: #fff;
+  }
+}
+@keyframes h1Animation{
+  0%{
+    color: #000;
+  }
+  100%{
+    color: #ffdc0c;
+  }
+}
 .text-box{
   height: 125px;
   width: 30%;
@@ -315,10 +333,35 @@
 .main-page-body{
   position: absolute;
   top: 100%;
-  width: 100%;
+  width: 98%;
   height: 100%;
-  display: block;
+  padding-top: 20px;
+  padding-left: 15px;
 }
+.main-page-body p{
+  width: 30%;
+  height: 30%;
+  font-size: 18px;
+  cursor: default;
+}
+.p1{
+  float: left;
+}
+.p2{
+  display: inline-block;
+}
+.p3{
+  float: right;
+}
+.main-page-body p:hover{
+  animation: paragrapAnimation 1s;
+  animation-fill-mode: forwards;
+}
+.main-page-body p:hover h1{
+  animation: h1Animation 1s;
+}
+
+
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{
     margin: auto;
