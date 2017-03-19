@@ -7,9 +7,9 @@ export default class PackagesHeader extends Component {
     return(
       <div className='packages-header'>
         <ul>
-          <li><Link to={ '/Packages/Standard' } className='package-li' activeClassName='selected-package'>Standard</Link></li>
-          <li><Link to={ '/Packages/Premium' } className='package-li' activeClassName='selected-package'>Premium</Link></li>
-          <li><Link to={ '/Packages/Exclusive' } className='package-li' activeClassName='selected-package'>Exclusive</Link></li>
+          <li><Link to={ '/Packages/Standard' } className='package-li'>Standard</Link></li>
+          <li><Link to={ '/Packages/Premium' } className='package-li'>Premium</Link></li>
+          <li><Link to={ '/Packages/Exclusive' } className='package-li'>Exclusive</Link></li>
         </ul>
       </div>
     )

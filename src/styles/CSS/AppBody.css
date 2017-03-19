@@ -390,13 +390,22 @@
   bottom: 0;
   padding: 0;
 }
-.about-us-paragraphs p{
-  width: 40%;
-  height: 250px;
-  float: left;
-  margin-left: 5%;
-  font-size: 20px;
-  overflow: auto;
+.about-us-main p{
+  width: 80%;
+  margin: 20px auto;
+  font-size: 18px;
+  cursor: default;
+}
+.article{
+  cursor: default;
+  height: auto;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.article:hover{
+  animation: paragrapAnimation 1s;
+  animation-fill-mode: forwards;
 }
 .about-us-gallery{
   width: 100%;
@@ -453,7 +462,7 @@
   color: #fff;
 }
 .packages-header{
-  margin: auto;
+  margin: 20px auto;
 }
 .packages-header ul{
   list-style: none;
@@ -472,7 +481,7 @@
 }
 .packages-body{
   width: 100%;
-  height: calc(100% - 115px);
+  height: calc(100% - 50px);
   position: absolute;
   bottom: 2px;
   border-bottom: 2px solid #ffdc0c;
@@ -516,6 +525,71 @@
 .package-li{
   text-decoration: none;
   color: #313131;
+}
+.contact-main{
+  height: calc(100% - 122px);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #313131;
+  color: #fff;
+}
+.contact-methods-container{
+  width: 90%;
+  height: 400px;
+  margin: auto;
+}
+.call-container{
+  float: left;
+  width: 50%;
+}
+.send-email-container{
+  float: right;
+  width: 50%;
+  height: 90%;
+}
+.send-email-container input{
+  width: 50%;
+  height: 30px;
+  border: none;
+  border-bottom: 2px solid #ffdc0c;
+  background-color: #313131;
+  color: #fff;
+}
+.send-email-container select{
+  width: 50%;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #ffdc0c;
+  background-color: #313131;
+  color: #fff;
+}
+.send-email-container textarea{
+  resize: none;
+  width: 50%;
+  height: 200px;
+  border: 2px solid #ffdc0c;
+  background-color: #515151;
+  padding-left: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.send-email-container button{
+  width: 25%;
+  height: 30px;
+  background-color: #ffdc0c;
+  color: #313131;
+  cursor: pointer;
+  border: none;
+}
+.send-email-container button:hover{
+  border: 2px solid #ffdc0c;
+  width: calc(25% - 4px);
+  height: 26px;
+  background-color: #313131;
+  color: #fff;
 }
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{

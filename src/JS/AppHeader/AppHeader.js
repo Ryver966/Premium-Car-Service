@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../styles/CSS/AppHeader.css';
+import { Link } from 'react-router';
 
 import AppMenuBar from './AppMenuBar';
 import SignInPopup from './SignInPopup';
@@ -65,7 +66,9 @@ openMobileMenu() {
   render() {
     return (
       <div className='App-header'>
+        <Link to='/'>
         <img src={ require('../../styles/img/Premium-Cars-Logo.png') } className='header-logo' alt='Logo' />
+        </Link>
         <AppMenuBar 
           openPopup={ this.props.openPopup }
           isUserLogged={ this.props.isUserLogged }

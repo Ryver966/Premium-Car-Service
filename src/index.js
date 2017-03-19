@@ -16,6 +16,7 @@ import Packages from './JS/AppBody/Packages/Packages';
 import StandardPackage from './JS/AppBody/Packages/Standard';
 import PremiumPackage from './JS/AppBody/Packages/Premium';
 import ExclusivePackage from './JS/AppBody/Packages/Exclusive';
+import Contact from './JS/AppBody/Contact/Contact';
 
 ReactDOM.render(
   <Router history={ browserHistory }>
@@ -27,6 +28,7 @@ ReactDOM.render(
         <Route path='/Packages/Premium' component={ PremiumPackage } />
         <Route path='/Packages/Exclusive' component={ ExclusivePackage } />
       </Route>
+      <Route path='/Contact' component={ Contact } />
       <Route path='/UserOffer' component={ UserOffer } />
       <Route path='/MyAccount' component={ MyAccount }>
         <Route path='/MyAccount/MyPackage' component={ MyPackage } />

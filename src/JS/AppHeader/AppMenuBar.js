@@ -20,7 +20,7 @@ export default class AppHeader extends Component {
           />
         <ul className={ `btn-list mobile-list ${ this.props.isOpenedMobileMenu ? 'show' : '' }` }>
           <li><Link to={ '/AboutUs' } className='user-li'>About Us</Link></li>
-          <li>Packages</li>
+          <li><Link to={ '/Packages/Standard' } className='user-li'>Packages</Link></li>
           <li>Contact</li>
         </ul>
       </div>
