@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../../styles/CSS/AppBody.css';
 
-const galleryImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg'];
+const galleryImages = ['1.png', '2.png', '3.png', '4.jpg'];
 
 export default class AboutUsGallery extends Component {
   constructor(props) {
