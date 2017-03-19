@@ -383,8 +383,12 @@
   border-radius: 50%;
   border: 2px solid #ffdc0c;
 }
-
-
+.about-us-main{
+  height: calc(100% - 122px);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{
     margin: auto;

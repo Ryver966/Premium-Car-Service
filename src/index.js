@@ -11,18 +11,20 @@ import MyPackage from './JS/AppBody/MyAccount/MyPackage';
 import PaymentCards from './JS/AppBody/MyAccount/PaymentCards';
 import NeedHelp from './JS/AppBody/MyAccount/NeedHelp';
 import MainPage from './JS/AppBody/MainPage/Main';
+import AboutUs from './JS/AppBody/AboutUs/AboutUs';
 
 ReactDOM.render(
   <Router history={ browserHistory }>
     <Route path='/' component={ App }>
       <IndexRoute component={ MainPage } />
-        <Route path='/UserOffer' component={ UserOffer } />
-        <Route path='/MyAccount' component={ MyAccount }>
-          <Route path='/MyAccount/MyPackage' component={ MyPackage } />
-          <Route path='/MyAccount/EditMyProfile' component={ EditMyProfile } />
-          <Route path='/MyAccount/PAymentCards' component={ PaymentCards } />
-          <Route path='/MyAccount/NeedHelp' component={ NeedHelp } />
-        </Route>
+      <Route path='/AboutUs' component={ AboutUs } />
+      <Route path='/UserOffer' component={ UserOffer } />
+      <Route path='/MyAccount' component={ MyAccount }>
+        <Route path='/MyAccount/MyPackage' component={ MyPackage } />
+        <Route path='/MyAccount/EditMyProfile' component={ EditMyProfile } />
+        <Route path='/MyAccount/PAymentCards' component={ PaymentCards } />
+        <Route path='/MyAccount/NeedHelp' component={ NeedHelp } />
+      </Route>
     </Route>
   </Router>
   ,
