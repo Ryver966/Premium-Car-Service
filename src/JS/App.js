@@ -23,7 +23,8 @@ export default class App extends Component {
     this.openPopup = this.openPopup.bind(this),
     this.openUserPopup = this.openUserPopup.bind(this),
     this.checkUser = this.checkUser.bind(this),
-    this.openAddCardPoup = this.openAddCardPoup.bind(this)
+    this.openAddCardPoup = this.openAddCardPoup.bind(this),
+    this.getPackage = this.getPackage.bind(this)
 
     this.state = {
       isUserLogged: this.checkUser(),
@@ -32,6 +33,11 @@ export default class App extends Component {
       isOpenedAddCardPopup: false
     }
   };
+
+  getPackage() {
+    if(!this.state.isUserLogged) { this.setState({ isOpenedSignInPopup: true }) }
+    else { window.location.href = '/UserOffer' }
+  }
 
   openAddCardPoup() {
     this.setState({
@@ -136,7 +142,8 @@ export default class App extends Component {
         isUserLogged: this.state.isUserLogged,
         isOpenedAddCardPopup: this.state.isOpenedAddCardPopup,
         openAddCardPoup: this.openAddCardPoup,
-        signOut: this.signOut
+        signOut: this.signOut,
+        getPackage: this.getPackage
       })
       )
     return (

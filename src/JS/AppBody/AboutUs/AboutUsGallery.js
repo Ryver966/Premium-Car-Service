@@ -14,7 +14,6 @@ export default class AboutUsGallery extends Component {
   }
 
   changeImg(param) {
-    console.log(param)
     if(param === 1) { this.setState({ img: this.state.img + 1 }) }
     else { this.setState({ img: this.state.img - 1 }) }
   };
@@ -34,7 +33,7 @@ export default class AboutUsGallery extends Component {
           width='500px' 
         />
         <img 
-          src={ require(`../../../styles/img/gallery/${ galleryImages[this.state.img < 3 ? this.state.img + 1 : this.state.img] }`) } 
+          src={ require(`../../../styles/img/gallery/${ galleryImages[this.state.img < galleryImages.length - 1 ? this.state.img + 1 : this.state.img] }`) } 
           height='200px' 
           width='250px' 
           className={ `no-select-img ${this.state.img < 3 ? 'show-img' : 'no-visible'}` }

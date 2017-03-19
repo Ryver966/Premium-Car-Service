@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../styles/CSS/AppHeader.css';
+import { Link } from 'react-router';
 
 import TopMenuBar from './TopMenuBar/TopMenuBar';
 
@@ -18,7 +19,7 @@ export default class AppHeader extends Component {
           openMyAccount={ this.props.openMyAccount }
           />
         <ul className={ `btn-list mobile-list ${ this.props.isOpenedMobileMenu ? 'show' : '' }` }>
-          <li>About Us</li>
+          <li><Link to={ '/AboutUs' } className='user-li'>About Us</Link></li>
           <li>Packages</li>
           <li>Contact</li>
         </ul>

@@ -444,6 +444,79 @@
 .no-visible{
   visibility: hidden;
 }
+.packages-main{
+  height: calc(100% - 122px);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #313131;
+  color: #fff;
+}
+.packages-header{
+  margin: auto;
+}
+.packages-header ul{
+  list-style: none;
+  margin: auto;
+}
+.packages-header ul li{
+  float: left;
+  width: 33%;
+  font-size: 25px;
+  background-color: #fff;
+  color: #313131;
+  cursor: pointer;
+}
+.packages-header ul li:hover{
+  opacity: 0.6
+}
+.packages-body{
+  width: 100%;
+  height: calc(100% - 115px);
+  position: absolute;
+  bottom: 2px;
+  border-bottom: 2px solid #ffdc0c;
+  margin: auto;
+}
+.upper-paragraph{
+  width: 48%;
+  float: left;
+  margin-left: 20px;
+}
+.lower-paragraph{
+  width: 33%;
+  float: left;
+  margin-top: 50px;
+}
+.package-main-container img{
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  margin-left: -250px;
+}
+.packages-main input {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -150px;
+  height: 50px;
+  width: 300px;
+  border: none;
+  border-radius: 25px;
+  background-color: #4F7131;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+.packages-main input:hover{
+  opacity: 0.6;
+}
+.package-li{
+  text-decoration: none;
+  color: #313131;
+}
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{
     margin: auto;
