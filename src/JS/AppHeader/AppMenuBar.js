@@ -19,9 +19,9 @@ export default class AppHeader extends Component {
           openMyAccount={ this.props.openMyAccount }
           />
         <ul className={ `btn-list mobile-list ${ this.props.isOpenedMobileMenu ? 'show' : '' }` }>
-          <li><Link to={ '/AboutUs' } className='user-li'>About Us</Link></li>
-          <li><Link to={ '/Packages/Standard' } className='user-li'>Packages</Link></li>
-          <li>Contact</li>
+          <Link to={ '/AboutUs' } className='user-li'><li>About Us</li></Link>
+          <Link to={ '/Packages/Standard' } className='user-li'><li>Packages</li></Link>
+          <Link to={ '/Contact' } className='user-li'><li>Contact</li></Link>
         </ul>
       </div>
     )

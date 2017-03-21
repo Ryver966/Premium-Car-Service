@@ -161,7 +161,7 @@ export default class App extends Component {
           openUserOffer={ this.openUserOffer }
           openMyAccount={ this.openMyAccount }
         />
-        {childrenWithProps}
+        { childrenWithProps }
       </div>
     );
   }

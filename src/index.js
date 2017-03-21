@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './JS/App';
 import './styles/CSS/index.css';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { browserHistory, IndexRoute, Router, Route} from 'react-router';
 
 import UserOffer from './JS/AppBody/UserOffer/UserOffer';
 import MyAccount from './JS/AppBody/MyAccount/MyAccount';
@@ -38,6 +38,5 @@ ReactDOM.render(
       </Route>
     </Route>
   </Router>
-  ,
-  document.getElementById('root')
+  , document.getElementById('root')
 );
