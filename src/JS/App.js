@@ -12,6 +12,11 @@ import AppHeader from './AppHeader/AppHeader';
     messagingSenderId: "87651018457"
   };
   firebase.initializeApp(config);
+  firebase.auth().onAuthStateChanged((user) => {
+    if(user){
+      console.log(user.uid)
+    }
+  })
 
 export default class App extends Component {
   constructor(props) {
@@ -24,7 +29,8 @@ export default class App extends Component {
     this.openUserPopup = this.openUserPopup.bind(this),
     this.checkUser = this.checkUser.bind(this),
     this.openAddCardPoup = this.openAddCardPoup.bind(this),
-    this.getPackage = this.getPackage.bind(this)
+    this.getPackage = this.getPackage.bind(this),
+    this.setName = this.setName.bind(this)
 
     this.state = {
       isUserLogged: this.checkUser(),
@@ -33,6 +39,21 @@ export default class App extends Component {
       isOpenedAddCardPopup: false
     }
   };
+
+  setName() {
+    const firstName = document.getElementById('first-name');
+    const lastName = document.getElementById('last-name');
+
+    if(firstName.value.length !== 0 && lastName.value.length !== 0){
+      firebase.auth().currentUser.updateProfile({
+        displayName: `${ firstName.value } ${ lastName.value }`
+      }).then(() => { alert('Your profile is updated.') });
+      firstName.value = '';
+      lastName.value = '';
+    } else {
+      alert('Something gone wrong. Please check all fields.')
+    }
+  }
 
   getPackage() {
     if(!this.state.isUserLogged) { this.setState({ isOpenedSignInPopup: true }) }
@@ -143,7 +164,8 @@ export default class App extends Component {
         isOpenedAddCardPopup: this.state.isOpenedAddCardPopup,
         openAddCardPoup: this.openAddCardPoup,
         signOut: this.signOut,
-        getPackage: this.getPackage
+        getPackage: this.getPackage,
+        setName: this.setName
       })
       )
     return (

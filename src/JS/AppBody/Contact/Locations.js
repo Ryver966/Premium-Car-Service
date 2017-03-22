@@ -25,25 +25,29 @@ export default class Locations extends Component {
         position: {
           lat: 37.760099,
           lng: -122.500233
-        }
+        },
+        key: 0
       },
       {
         position: {
           lat: 37.659818,
           lng: -122.422187
-        }
+        },
+        key: 1
       },
       {
         position: {
           lat: 37.357703,
           lng: -121.949393
-        }
+        },
+        key: 2
       },
       {
         position: {
           lat: 34.088430,
           lng: -118.089667
-        }
+        },
+        key: 3
       },
       ]
     }

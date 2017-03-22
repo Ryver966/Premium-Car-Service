@@ -41,9 +41,9 @@ export default class UserOffer extends Component {
     return(
       <div className='user-offer'>
         <div className='offer-container'>
-          <OfferCard offer={ offer[2] } />
+          <OfferCard offer={ offer[0] } />
           <OfferCard offer={ offer[1] } />
-          <OfferCard offer={ offer[0] }/>
+          <OfferCard offer={ offer[2] }/>
         </div>
       </div>
     )

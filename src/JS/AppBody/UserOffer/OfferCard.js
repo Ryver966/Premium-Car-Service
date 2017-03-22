@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../../styles/CSS/AppBody.css';
+import { Link } from 'react-router';
 
 export default class OfferCard extends Component {
   render() {
@@ -14,7 +15,7 @@ export default class OfferCard extends Component {
           <li>{ this.props.offer.li3 }</li>
           <li>{ this.props.offer.li4 }</li>
           <li>{ this.props.offer.li5 }</li>
-          <li className='more-btn'>- See More..</li>
+          <Link to={ `/Packages/${ this.props.offer.title }` }><li className='more-btn'>- See More..</li></Link>
         </ul>
         <input type='button' className='user-offer-btn' value={ `Get For ${ this.props.offer.packageValue } / Month` } />
       </div>

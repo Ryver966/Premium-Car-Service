@@ -11,6 +11,7 @@ export default class MyAccount extends Component {
       (child) => React.cloneElement(child, {
         isOpenedAddCardPopup: this.props.isOpenedAddCardPopup,
         openAddCardPoup: this.props.openAddCardPoup,
+        setName: this.props.setName
       })
       )
 
