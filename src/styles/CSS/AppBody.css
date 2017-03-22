@@ -545,11 +545,11 @@
 }
 .send-email-container{
   float: right;
-  width: 50%;
+  width: 38%;
   height: 90%;
 }
 .send-email-container input{
-  width: 50%;
+  width: 80%;
   height: 30px;
   border: none;
   border-bottom: 2px solid #ffdc0c;
@@ -557,7 +557,7 @@
   color: #fff;
 }
 .send-email-container select{
-  width: 50%;
+  width: 80%;
   height: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -568,7 +568,7 @@
 }
 .send-email-container textarea{
   resize: none;
-  width: 50%;
+  width: 80%;
   height: 200px;
   border: 2px solid #ffdc0c;
   background-color: #515151;
@@ -590,6 +590,18 @@
   height: 26px;
   background-color: #313131;
   color: #fff;
+}
+.locations-container{
+  height: 400px;
+  width: 50%;
+  position: relative;
+  bottom: 200px;
+  left: 30px;
+}
+.map-container{
+  width: 100%;
+  height: 80%;
+  background-color: #fff;
 }
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{

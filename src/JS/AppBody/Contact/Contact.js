@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../../../styles/CSS/AppBody.css';
 
+import Locations from './Locations';
+
 export default class Contact extends Component {
   render() {
     return(
@@ -26,6 +28,7 @@ export default class Contact extends Component {
             <button>Send</button>
           </form>
         </div>
+        <Locations />
       </div>
     )
   }
