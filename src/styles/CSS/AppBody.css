@@ -160,7 +160,11 @@
   margin: auto;
   color: #FFF;
   margin-bottom: 20px;
-  border: 2px solid #ffdc0c;
+  text-align: left;
+}
+.user-cards p{
+  padding-left: 20px;
+  font-size: 25px;
 }
 .payment-cards button{
   width: 25%;

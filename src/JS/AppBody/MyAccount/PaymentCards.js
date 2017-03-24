@@ -9,10 +9,7 @@ export default class PaymentCards extends Component {
     return(
       <div className='payment-cards'>
         <h1 className='my-account-h1'>Payment Cards</h1>
-        <div className='user-cards'>
-          <h2>Your Cards:</h2>
-          
-        </div>
+        <div className='user-cards' />
         <button onClick={ this.props.openAddCardPoup }>Add Card</button>
         <AddCardPopup
           isOpenedAddCardPopup={ this.props.isOpenedAddCardPopup }

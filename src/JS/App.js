@@ -46,8 +46,7 @@ export default class App extends Component {
         firebase.database().ref(`Users/${ user.uid }/Cards`).off('child_added');
         firebase.database().ref(`Users/${ user.uid }/Cards`).on('child_added', (snap) => {
           const cardName = document.createElement('p');
-          cardName.id = snap.key;
-          cardName.innerHTML = snap.key;
+          cardName.innerHTML = `${snap.key.substring(0, 4)} **** **** ****`;
           cardsContainer.appendChild(cardName);
         })
       }
@@ -202,6 +201,7 @@ export default class App extends Component {
   }
 
   render() {
+
       const childrenWithProps = React.Children.map(this.props.children,
       (child) => React.cloneElement(child, {
         isUserLogged: this.state.isUserLogged,
