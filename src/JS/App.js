@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase'
 import '../styles/CSS/App.css';
+import { Link } from 'react-router';
 
 import AppHeader from './AppHeader/AppHeader';
 
@@ -28,7 +29,8 @@ export default class App extends Component {
     this.setName = this.setName.bind(this),
     this.setUserData = this.setUserData.bind(this),
     this.setUserCards = this.setUserCards.bind(this),
-    this.displayCards = this.displayCards.bind(this)
+    this.displayCards = this.displayCards.bind(this),
+    this.displayPackage = this.displayPackage.bind(this)
 
     this.state = {
       isUserLogged: this.checkUser(),
@@ -37,6 +39,32 @@ export default class App extends Component {
       isOpenedAddCardPopup: false
     }
   };
+
+  displayPackage() {
+    const packageContainer = document.getElementsByClassName('my-package-txt-container')[0];
+    const txt = document.createElement('p');
+    const link = document.getElementById('get-package-btn');
+    const btn = document.createElement('input');
+
+    btn.type = 'button';
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user) {
+        firebase.database().ref(`Users/${ user.uid }/package`).off('value');
+        firebase.database().ref(`Users/${ user.uid }/package`).on('value', (snap) => {
+          if(snap.val() === 'none') {
+            txt.innerHTML = "Now you don't have any package";
+            btn.value = 'Get Package!';
+          } else {
+            txt.innerHTML = `Your're ${snap.val()} member`;
+            btn.value = 'Change Package!';
+          }
+          link.appendChild(btn);
+          packageContainer.appendChild(txt);
+          packageContainer.appendChild(link);
+        })
+      }
+    })
+  }
 
   displayCards() {
     firebase.auth().onAuthStateChanged((user) => {
@@ -201,6 +229,7 @@ export default class App extends Component {
   }
 
   render() {
+    this.displayPackage();
 
       const childrenWithProps = React.Children.map(this.props.children,
       (child) => React.cloneElement(child, {
