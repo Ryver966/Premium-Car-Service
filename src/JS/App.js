@@ -12,11 +12,6 @@ import AppHeader from './AppHeader/AppHeader';
     messagingSenderId: "87651018457"
   };
   firebase.initializeApp(config);
-  firebase.auth().onAuthStateChanged((user) => {
-    if(user){
-      console.log(user.uid)
-    }
-  })
 
 export default class App extends Component {
   constructor(props) {
@@ -30,7 +25,9 @@ export default class App extends Component {
     this.checkUser = this.checkUser.bind(this),
     this.openAddCardPoup = this.openAddCardPoup.bind(this),
     this.getPackage = this.getPackage.bind(this),
-    this.setName = this.setName.bind(this)
+    this.setName = this.setName.bind(this),
+    this.setUserData = this.setUserData.bind(this),
+    this.setUserCards = this.setUserCards.bind(this)
 
     this.state = {
       isUserLogged: this.checkUser(),
@@ -39,6 +36,35 @@ export default class App extends Component {
       isOpenedAddCardPopup: false
     }
   };
+
+  setUserCards(cardNum, ccv, cardOwner, validTo, userUid) {
+        firebase.database().ref(`Users/${ userUid }/Cards/${cardNum}`).set({
+          CCV: ccv,
+          CardOwner: cardOwner,
+          Validation: validTo
+        })
+      }
+
+  setUserData() {
+    const cardNum = document.getElementById('card-num');
+    const cardCCV = document.getElementById('card-ccv');
+    const cardOwn = document.getElementById('card-own');
+    const validateMM = document.getElementById('valid-date-mm');
+    const validateYY = document.getElementById('valid-date-yy');
+    firebase.auth().onAuthStateChanged((user) => {
+    if(user){
+      if(cardNum.value && cardCCV.value && cardOwn.value && validateMM.value && validateYY.value) {
+        this.setUserCards(cardNum.value, cardCCV.value, cardOwn.value, `${ validateMM.value }/${ validateYY.value }`, user.uid);
+        alert('Card added');
+        cardNum.value = '';
+        cardCCV.value = '';
+        cardOwn.value = '';
+        validateMM.value = '';
+        validateYY.value = '';
+      }
+    }
+  })
+  }
 
   setName() {
     const firstName = document.getElementById('first-name');
@@ -165,7 +191,8 @@ export default class App extends Component {
         openAddCardPoup: this.openAddCardPoup,
         signOut: this.signOut,
         getPackage: this.getPackage,
-        setName: this.setName
+        setName: this.setName,
+        setUserData: this.setUserData
       })
       )
     return (
