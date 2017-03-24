@@ -5,6 +5,7 @@ import AddCardPopup from './AddCardPopup';
 
 export default class PaymentCards extends Component {
   render() {
+    this.props.displayCards()
     return(
       <div className='payment-cards'>
         <h1 className='my-account-h1'>Payment Cards</h1>

@@ -27,7 +27,8 @@ export default class App extends Component {
     this.getPackage = this.getPackage.bind(this),
     this.setName = this.setName.bind(this),
     this.setUserData = this.setUserData.bind(this),
-    this.setUserCards = this.setUserCards.bind(this)
+    this.setUserCards = this.setUserCards.bind(this),
+    this.displayCards = this.displayCards.bind(this)
 
     this.state = {
       isUserLogged: this.checkUser(),
@@ -37,8 +38,25 @@ export default class App extends Component {
     }
   };
 
+  displayCards() {
+    firebase.auth().onAuthStateChanged((user) => {
+      const cardsContainer = document.getElementsByClassName('user-cards')[0];
+      cardsContainer.innerHTML = '';
+      if(user) {
+        firebase.database().ref(`Users/${ user.uid }/Cards`).off('child_added');
+        firebase.database().ref(`Users/${ user.uid }/Cards`).on('child_added', (snap) => {
+          const cardName = document.createElement('p');
+          cardName.id = snap.key;
+          cardName.innerHTML = snap.key;
+          cardsContainer.appendChild(cardName);
+        })
+      }
+    })
+  }
+
   setUserCards(cardNum, ccv, cardOwner, validTo, userUid) {
         firebase.database().ref(`Users/${ userUid }/Cards/${cardNum}`).set({
+          CardNum: cardNum,
           CCV: ccv,
           CardOwner: cardOwner,
           Validation: validTo
@@ -192,7 +210,8 @@ export default class App extends Component {
         signOut: this.signOut,
         getPackage: this.getPackage,
         setName: this.setName,
-        setUserData: this.setUserData
+        setUserData: this.setUserData,
+        displayCards: this.displayCards
       })
       )
     return (

@@ -153,7 +153,9 @@
 }
 .user-cards{
   width: 50%;
-  height: 100px;
+  min-height: 100px;
+  max-height: 200px;
+  overflow: auto;
   background-color: #515151;
   margin: auto;
   color: #FFF;

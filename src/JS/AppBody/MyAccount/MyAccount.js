@@ -12,7 +12,8 @@ export default class MyAccount extends Component {
         isOpenedAddCardPopup: this.props.isOpenedAddCardPopup,
         openAddCardPoup: this.props.openAddCardPoup,
         setName: this.props.setName,
-        setUserData: this.props.setUserData
+        setUserData: this.props.setUserData,
+        displayCards: this.props.displayCards
       })
       )
 
