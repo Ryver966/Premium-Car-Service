@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase'
 import '../styles/CSS/App.css';
-import { Link } from 'react-router';
 
 import AppHeader from './AppHeader/AppHeader';
 
@@ -36,18 +35,19 @@ export default class App extends Component {
       isUserLogged: this.checkUser(),
       isOpenedSignInPopup: false,
       isOpenedUserPopup: false,
-      isOpenedAddCardPopup: false
+      isOpenedAddCardPopup: false,
     }
   };
 
   displayPackage() {
-    const packageContainer = document.getElementsByClassName('my-package-txt-container')[0];
-    const txt = document.createElement('p');
-    const link = document.getElementById('get-package-btn');
-    const btn = document.createElement('input');
-
-    btn.type = 'button';
     firebase.auth().onAuthStateChanged((user) => {
+      const packageContainer = document.getElementsByClassName('my-package-txt-container')[0];
+      const link = document.getElementById('get-package-btn');
+      const btn = document.createElement('input')
+      const txt = document.createElement('p');
+
+      packageContainer.innerHTML = '';
+      btn.type = 'button';
       if(user) {
         firebase.database().ref(`Users/${ user.uid }/package`).off('value');
         firebase.database().ref(`Users/${ user.uid }/package`).on('value', (snap) => {
@@ -56,11 +56,10 @@ export default class App extends Component {
             btn.value = 'Get Package!';
           } else {
             txt.innerHTML = `Your're ${snap.val()} member`;
-            btn.value = 'Change Package!';
+            btn.value = 'Chagne Package!';
           }
           link.appendChild(btn);
           packageContainer.appendChild(txt);
-          packageContainer.appendChild(link);
         })
       }
     })
@@ -229,8 +228,6 @@ export default class App extends Component {
   }
 
   render() {
-    this.displayPackage();
-
       const childrenWithProps = React.Children.map(this.props.children,
       (child) => React.cloneElement(child, {
         isUserLogged: this.state.isUserLogged,
@@ -240,7 +237,8 @@ export default class App extends Component {
         getPackage: this.getPackage,
         setName: this.setName,
         setUserData: this.setUserData,
-        displayCards: this.displayCards
+        displayCards: this.displayCards,
+        displayPackage: this.displayPackage,
       })
       )
     return (

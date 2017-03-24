@@ -13,7 +13,8 @@ export default class MyAccount extends Component {
         openAddCardPoup: this.props.openAddCardPoup,
         setName: this.props.setName,
         setUserData: this.props.setUserData,
-        displayCards: this.props.displayCards
+        displayCards: this.props.displayCards,
+        displayPackage: this.props.displayPackage,
       })
       )
 
