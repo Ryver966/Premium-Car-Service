@@ -35,7 +35,7 @@
   left: 12.5%;
   margin-top: -241px;
   height: 600px;
-  width: 100%;
+  width: 87.5%;
 }
 .user-packages input{
   border: none;
@@ -609,6 +609,39 @@
   width: 80%;
   height: 80%;
   background-color: #fff;
+}
+.modal{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.modal div{
+  height: 320px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -160px;
+  background-color: #313131;
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.modal-btn{
+  background-color: #4F7131;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  width: 80%;
+  height: 40px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-btn:hover{
+  opacity: 0.6;
 }
 @media screen and (min-width: 731px) and ( max-width: 1271px){
   .offer-container{

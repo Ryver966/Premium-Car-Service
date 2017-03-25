@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../../styles/CSS/AppBody.css';
 
 import OfferCard from './OfferCard';
+import Regulations from './Regulations';
 
 const offer = [
   {
@@ -12,7 +13,7 @@ const offer = [
     li3: '- And typesetting industry',
     li4: '- The standard chunk of Lorem Ipsum',
     li5: '- It was popularised in the 1960s',
-    packageValue: '75$'
+    packageValue: '150$'
   },
   {
     title: 'Premium',
@@ -22,7 +23,7 @@ const offer = [
     li3: '- And typesetting industry',
     li4: '- Lorem Ipsum',
     li5: '- It was popularised in the 1960s',
-    packageValue: '100$'
+    packageValue: '250$'
   },
   {
     title: 'Exclusive',
@@ -32,7 +33,7 @@ const offer = [
     li3: '- And typesetting industry',
     li4: '- Lorem Ipsum',
     li5: '- It has survived not only five centuries',
-    packageValue: '150$'
+    packageValue: '500$'
   },
 ];
 
@@ -41,10 +42,27 @@ export default class UserOffer extends Component {
     return(
       <div className='user-offer'>
         <div className='offer-container'>
-          <OfferCard offer={ offer[0] } />
-          <OfferCard offer={ offer[1] } />
-          <OfferCard offer={ offer[2] }/>
+          <OfferCard 
+            selectedPackage={ this.props.selectedPackage }
+            openModal={ this.props.openModal }
+            offer={ offer[0] } 
+          />
+          <OfferCard
+            offer={ offer[1] } 
+            openModal={ this.props.openModal }
+            selectedPackage={ this.props.selectedPackage }
+          />
+          <OfferCard 
+            offer={ offer[2] }
+            openModal={ this.props.openModal }
+            selectedPackage={ this.props.selectedPackage }
+          />
         </div>
+        <Regulations 
+          isModalDisplay={ this.props.isModalDisplay }
+          buyPackage={ this.props.buyPackage }
+          closeModal={ this.props.closeModal }
+        />
       </div>
     )
   }

@@ -29,28 +29,64 @@ export default class App extends Component {
     this.setUserData = this.setUserData.bind(this),
     this.setUserCards = this.setUserCards.bind(this),
     this.displayCards = this.displayCards.bind(this),
-    this.displayPackage = this.displayPackage.bind(this)
+    this.displayPackage = this.displayPackage.bind(this),
+    this.setUserPackage = this.setUserPackage.bind(this),
+    this.openModal = this.openModal.bind(this),
+    this.buyPackage = this.buyPackage.bind(this),
+    this.closeModal = this.closeModal.bind(this),
+
 
     this.state = {
       isUserLogged: this.checkUser(),
       isOpenedSignInPopup: false,
       isOpenedUserPopup: false,
       isOpenedAddCardPopup: false,
+      isModalDisplay: false,
+      selectedPackage: 'none'
     }
   };
+
+  closeModal() {
+    this.setState({ isModalDisplay: false })
+  }
+
+  buyPackage() {
+    console.log('test')
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user) {
+        this.setUserPackage(user.uid);
+        alert('You bought package!')
+      }
+    })
+    this.closeModal();
+  }
+
+  openModal(param) {
+    this.setState({ 
+      isModalDisplay: true, 
+      selectedPackage: param
+    });
+  }
+
+  setUserPackage(userUid) {
+        firebase.database().ref(`Users/${ userUid }/Package`).set({
+          package: this.state.selectedPackage
+        })
+      }
 
   displayPackage() {
     firebase.auth().onAuthStateChanged((user) => {
       const packageContainer = document.getElementsByClassName('my-package-txt-container')[0];
       const link = document.getElementById('get-package-btn');
-      const btn = document.createElement('input')
+      const btn = document.createElement('input');
       const txt = document.createElement('p');
 
       packageContainer.innerHTML = '';
+      link.innerHTML = '';
       btn.type = 'button';
       if(user) {
-        firebase.database().ref(`Users/${ user.uid }/package`).off('value');
-        firebase.database().ref(`Users/${ user.uid }/package`).on('value', (snap) => {
+        firebase.database().ref(`Users/${ user.uid }/Package/package`).off('value');
+        firebase.database().ref(`Users/${ user.uid }/Package/package`).on('value', (snap) => {
           if(snap.val() === 'none') {
             txt.innerHTML = "Now you don't have any package";
             btn.value = 'Get Package!';
@@ -58,9 +94,9 @@ export default class App extends Component {
             txt.innerHTML = `Your're ${snap.val()} member`;
             btn.value = 'Chagne Package!';
           }
-          link.appendChild(btn);
           packageContainer.appendChild(txt);
-        })
+          link.appendChild(btn);
+      })
       }
     })
   }
@@ -239,6 +275,11 @@ export default class App extends Component {
         setUserData: this.setUserData,
         displayCards: this.displayCards,
         displayPackage: this.displayPackage,
+        isModalDisplay: this.state.isModalDisplay,
+        selectedPackage: this.state.selectedPackage,
+        openModal: this.openModal,
+        buyPackage: this.buyPackage,
+        closeModal: this.closeModal,
       })
       )
     return (
