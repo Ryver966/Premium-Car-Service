@@ -6,7 +6,6 @@ export default class PremiumPackage extends Component {
     return(
       <div className='package-main-container'>
         <h1>Premium</h1>
-        <img src={ require('../../../styles/img/premium.jpg') } />
         <p className='lower-paragraph'>Donec libero metus, pretium non lacinia non, mollis a libero. Duis eu nisl tortor. Donec porttitor auctor ligula in elementum. Cras laoreet quam a lacus vulputate eleifend. Duis hendrerit id magna at faucibus. Mauris sem nisl, commodo sed finibus vitae, interdum sagittis nisl. Ut laoreet tellus erat, a dapibus enim fringilla ac.
         </p>
         
@@ -15,7 +14,7 @@ export default class PremiumPackage extends Component {
 
         <p className='lower-paragraph'>Etiam in sodales neque. Integer dapibus, libero dictum pharetra mattis, nisl sem pulvinar justo, ac sodales ligula metus vel erat. Proin varius, libero ut iaculis blandit, elit nunc malesuada tortor, ac molestie orci erat vel leo. Vivamus fringilla dui eu dui mattis gravida vel ac dolor. Nullam imperdiet purus augue, quis porttitor diam pharetra ac.
         </p>
-
+        <img src={ require('../../../styles/img/premium.jpg') } />
       </div>
     )
   }

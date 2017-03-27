@@ -6,7 +6,6 @@ export default class StandardPackage extends Component {
     return(
       <div className='package-main-container'>
         <h1>Standard</h1>
-        <img src={ require('../../../styles/img/standard.jpg') } />
         <p className='lower-paragraph'>Suspendisse eget imperdiet augue. Etiam porta sapien a magna porta mattis. Sed euismod arcu at tincidunt molestie. Etiam quis tellus non purus porttitor tristique. Nam nunc massa, maximus eget congue eu, laoreet sed tellus. Donec sit amet odio ullamcorper, semper magna sed, posuere metus. Nulla sit amet congue lacus.
         </p>
 
@@ -15,6 +14,7 @@ export default class StandardPackage extends Component {
 
         <p className='lower-paragraph'>Donec libero metus, pretium non lacinia non, mollis a libero. Duis eu nisl tortor. Donec porttitor auctor ligula in elementum. Cras laoreet quam a lacus vulputate eleifend. Duis hendrerit id magna at faucibus. Mauris sem nisl, commodo sed finibus vitae, interdum sagittis nisl. Ut laoreet tellus erat, a dapibus enim fringilla ac.
         </p>
+        <img src={ require('../../../styles/img/standard.jpg') } />
       </div>
     )
   }

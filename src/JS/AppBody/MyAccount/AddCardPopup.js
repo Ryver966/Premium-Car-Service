@@ -12,9 +12,9 @@ export default class AddCardPopup extends Component {
           <p>Card Owner</p>
           <input type='text' id='card-own'/>
           <p>Valid To</p>
-          <input type='number' id='valid-date-mm'/>
+          <input type='number' id='valid-date-mm' className='add-card-validate'/>
           <a> / </a>
-          <input type='number' id='valid-date-yy'/><br />
+          <input type='number' id='valid-date-yy' className='add-card-validate'/><br />
           <button onClick={ this.props.setUserData }>Add</button>
         </div>
     )

@@ -197,6 +197,9 @@
   color: #fff;
   text-align: center;
 }
+.add-card-validate{
+  width: 30px;
+}
 .valid-date{
   width: 40px;
 }
@@ -342,11 +345,11 @@
   width: 98%;
   height: 100%;
   padding-top: 20px;
-  padding-left: 15px;
+  padding-left: 5px;
 }
 .main-page-body p{
   width: 30%;
-  height: 30%;
+  height: auto;
   font-size: 18px;
   cursor: default;
 }
@@ -720,5 +723,128 @@
   }
   .main-page-body{
     padding-left: 0;
+  }
+  .my-account-page{
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+  }
+  .my-account-menu{
+    width: 30%;
+  }
+  .my-account-menu ul{
+    padding-left: 30px;
+  }
+  .right-container{
+    width: calc(70% - 2px);
+  }
+  .my-package input{
+    width: 60%;
+  }
+  .edit-my-profile input{
+    width: 80%;
+  }
+  .edit-my-profile select{
+    width: 60%;
+  }
+  .payment-cards h1{
+    display: none;
+  }
+  .user-cards{
+    width: 95%;
+    margin-top: -20px;
+    min-height: 50px;
+  }
+  .payment-cards button{
+    width: 50%;
+  }
+  .add-card-popup{
+    width: 90%;
+    height: 50%;
+  }
+  .need-help textarea{
+    width: 90%;
+  }
+  .need-help button{
+    width: 50%;
+  }
+  .about-us-paragraphs{
+    height: auto;
+  }
+  .about-us-gallery{
+    height: auto;
+    position: relative;
+  }
+  .about-us-gallery img{
+    width: 60%;
+    height: 60%;
+  }
+  .about-us-gallery input{
+    width: 10%;
+    height: 10%;
+    position: relative;
+  }
+  .no-select-img{
+    display: none;
+  }
+  .packages-main{
+    height: 110%;
+    position: absolute;
+    top: 122px;
+  }
+  .packages-header{
+    margin-left: -35px;
+  }
+  .packages-header ul{
+    width: 90%;
+  }
+  .packages-header ul li{
+    width: 33%;
+    font-size: 14px;
+  }
+  .package-main-container{
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+  }
+  .packages-body{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50px;
+    background-color: #313131;
+    
+  }
+  .package-main-container img{
+    display: none;
+  }
+  .lower-paragraph{
+    height: auto;
+    width: 33%;
+    margin-top: 0;
+    background-color: #313131;
+  }
+  .contact-main{
+    height: 180%;
+    position: absolute;
+    top: 122px;
+    background-size: cover;
+  }
+  .contact-methods-container{
+    width: 100%;
+  }
+  .call-container{
+    width: 100%;
+    float: inherit;
+    margin-bottom: 50px;
+  }
+  .send-email-container{
+    width: 100%;
+  }
+  .locations-container{
+    position: relative;
+    top: 100px;
+    width: 90%;
   }
 }
