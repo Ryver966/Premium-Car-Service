@@ -643,7 +643,7 @@
 .modal-btn:hover{
   opacity: 0.6;
 }
-@media screen and (min-width: 731px) and ( max-width: 1271px){
+@media screen and (min-width: 739px) and ( max-width: 1271px){
   .offer-container{
     margin: auto;
     float: left;
@@ -661,8 +661,11 @@
   .user-packages ul{
     font-size: 14px;
   }
+  .main-page-body p{
+    height: auto;
+  }
 }
-@media screen and (max-width: 730px){
+@media screen and (max-width: 738px){
   .user-packages{
     width: 95%;
     height: 550px;
@@ -688,5 +691,34 @@
   }
   .user-packages ul{
     font-size: 14px;
+  }
+  .text-box{
+    width: calc(100% - 24px);
+    position: absolute;
+    left: 0;
+  }
+  .main-page-body p{
+    width: 100%;
+    height: auto;
+    float: inherit;
+    padding-left: 2.5px;
+  }
+  .single-avatar-container{
+    float: inherit;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    bottom: 0;
+    margin-bottom: 15px;
+  }
+  .our-team-container{
+    height: auto;
+    width: calc(100% + 5px);
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+  .main-page-body{
+    padding-left: 0;
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../../styles/CSS/AppBody.css';
 
 import OfferCard from './OfferCard';
-import Regulations from './Regulations';
+import Modal from './Modal';
 
 const offer = [
   {
@@ -58,7 +58,7 @@ export default class UserOffer extends Component {
             selectedPackage={ this.props.selectedPackage }
           />
         </div>
-        <Regulations 
+        <Modal
           isModalDisplay={ this.props.isModalDisplay }
           buyPackage={ this.props.buyPackage }
           closeModal={ this.props.closeModal }
