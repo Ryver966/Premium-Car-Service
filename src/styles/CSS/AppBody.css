@@ -667,6 +667,35 @@
   .main-page-body p{
     height: auto;
   }
+  .about-us-paragraphs{
+    height: auto;
+  }
+  .about-us-gallery{
+    height: auto;
+    position: relative;
+    top: 38px;
+  }
+  .about-us-gallery img{
+    width: 30%;
+    height: 30%;
+  }
+  .about-us-gallery input{
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+  .no-select-img{
+    display: none;
+  }
+  .lower-paragraph{
+    position: relative;
+  }
+  .package-main-container img{
+    position: relative;
+    left: 150px;
+    top: 0;
+    height: 20%;
+  }
 }
 @media screen and (max-width: 738px){
   .user-packages{
