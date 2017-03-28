@@ -789,9 +789,10 @@
     display: none;
   }
   .packages-main{
-    height: 110%;
+    min-height: calc(100%-122px);
     position: absolute;
     top: 122px;
+    left:0;
   }
   .packages-header{
     margin-left: -35px;
@@ -811,18 +812,25 @@
   .packages-body{
     width: 100%;
     height: auto;
-    position: absolute;
+    position: relative;
     top: 50px;
     background-color: #313131;
-    
   }
   .package-main-container img{
     display: none;
   }
+  .packages-body input{
+    position: relative;
+    bottom: 10px;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 0;
+  }
   .lower-paragraph{
     height: auto;
-    width: 33%;
-    margin-top: 0;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 15px;
     background-color: #313131;
   }
   .contact-main{
