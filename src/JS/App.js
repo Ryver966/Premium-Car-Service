@@ -51,7 +51,6 @@ export default class App extends Component {
   }
 
   buyPackage() {
-    console.log('test')
     firebase.auth().onAuthStateChanged((user) => {
       if(user) {
         this.setUserPackage(user.uid);
@@ -191,9 +190,9 @@ export default class App extends Component {
 
     firebase.auth().signInWithEmailAndPassword(email.value, pass.value)
       .then((success) => {
-            this.setState({
-              isOpenedSignInPopup: false
-            })
+        this.setState({
+          isOpenedSignInPopup: false
+        })
         email.value = '';
         pass.value = '';
       })
@@ -202,7 +201,6 @@ export default class App extends Component {
           alert(error.message);
         }
       });
-      
   }
 
   signUp() {
